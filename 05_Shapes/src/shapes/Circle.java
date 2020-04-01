@@ -14,9 +14,9 @@ public class Circle extends Shape {
     
     //udelat za DU
     //TODO udelat pomoci tovarni metody
-//    public Circle(double d) {
-//        this.r = d/2;
-//    }
+    public static Circle diameter(double d) {
+        return new Circle(d/2);
+    }
     
     public double getR(){
         return r;
