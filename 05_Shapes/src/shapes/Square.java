@@ -12,6 +12,7 @@ public class Square extends Rectangle {//IS A each square is a rectangle
     //ale tim super to obejdu a muzu mu dat treba jenom takhle min parametru
     public Square (double a){
         super(a,a);
+        this.a = a;
     }
 
     @Override
@@ -21,6 +22,7 @@ public class Square extends Rectangle {//IS A each square is a rectangle
     
     public static void main(String[] args){
         Square s = new Square(4);
+        System.out.println(s.toString());
         System.out.println(s.area());
     }
     
