@@ -1,4 +1,6 @@
-package shapes;
+package interfaceVariant;
+
+import shapes.*;
 
 /**
  *

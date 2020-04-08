@@ -1,5 +1,6 @@
-package shapes;
+package interfaceVariant;
 
+import shapes.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,6 +9,8 @@ import java.util.Scanner;
  * @author David Šafařík
  */
 public class MainShapes {
+    //udelat novou metodu pro sort objektu, ale stahnout si od ni code
+    
     static Scanner sc = new Scanner(System.in);
     
     /**
@@ -43,16 +46,16 @@ public class MainShapes {
      * @param shapes
      * @return vypoctenou plochu
      */
-    private static double calculateArea(ArrayList<Shape> shapes){
+    private static double calculateArea(ArrayList<ShapeInterface> shapes){
         double area = 0;
-        for(Shape s : shapes){
+        for(ShapeInterface s : shapes){
             area += s.computeArea();
         }
         return area;
     }
     
-    private static void printShapes(ArrayList<Shape> shapes){
-        for(Shape s : shapes){
+    private static void printShapes(ArrayList<ShapeInterface> shapes){
+        for(ShapeInterface s : shapes){
             System.out.println(s.toString());
         }
     }
@@ -82,7 +85,7 @@ public class MainShapes {
         //deklarace promennych
         int choice;
         int chooseShape;
-        ArrayList<Shape> shapes = new ArrayList();
+        ArrayList<ShapeInterface> shapes = new ArrayList();
         //cyklus programu
         do{
             //vypis menu

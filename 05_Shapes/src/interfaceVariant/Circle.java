@@ -1,10 +1,12 @@
-package shapes;
+package interfaceVariant;
+
+import shapes.*;
 
 /**
  *
  * @author David Šafařík
  */
-public class Circle extends Shape {
+public class Circle implements ShapeInterface{//CIrcle je typove kompatiblini s ShapeInterface, implementuje metody v ShapeInterface
     //data
     private double r;
 
@@ -42,7 +44,6 @@ public class Circle extends Shape {
         System.out.println(c.getR());
         System.out.println(c.toString());
         System.out.println(c.computeArea());
-        System.out.println(c.name);
         System.out.println(c.getShapeName());
     }
 }

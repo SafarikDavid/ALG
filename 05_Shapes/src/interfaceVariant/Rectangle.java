@@ -1,10 +1,12 @@
-package shapes;
+package interfaceVariant;
+
+import shapes.*;
 
 /**
  *
  * @author David Šafařík
  */
-public class Rectangle extends Shape {
+public class Rectangle implements ShapeInterface {
     //data
     private double a;
     private double b;
