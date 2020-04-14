@@ -11,6 +11,8 @@ public interface ShapeInterface {
     //methods
     public double computeArea();
     
+    public double getArea();
+    
     default String getShapeName(){
         return this.getClass().getSimpleName();
     }

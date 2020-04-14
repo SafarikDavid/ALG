@@ -7,9 +7,11 @@ package interfaceVariant;
 public class Circle implements ShapeInterface{//CIrcle je typove kompatiblini s ShapeInterface, implementuje metody v ShapeInterface
     //data
     private double r;
+    private double area;
 
     public Circle(double r) {
         this.r = r;
+        this.area = computeArea();
     }
     
     //udelat za DU
@@ -29,12 +31,17 @@ public class Circle implements ShapeInterface{//CIrcle je typove kompatiblini s 
     @Override
     public String toString() {
         //return "Circle{" + "r=" + r + '}';
-        return super.toString() + String.format(" r = %.2f", r);
+        return this.getShapeName() + String.format(" r = %.2f", r);
     }
     
     @Override
     public double computeArea(){
         return Math.PI*r*r;
+    }
+    
+    @Override
+    public double getArea() {
+        return area;
     }
     
     public static void main(String[] args){
