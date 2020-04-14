@@ -1,7 +1,5 @@
 package interfaceVariant;
 
-import shapes.*;
-
 /**
  *
  * @author David Šafařík

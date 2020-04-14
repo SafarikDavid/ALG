@@ -1,4 +1,4 @@
-package shapes;
+package inheritanceVariant;
 
 /**
  *
@@ -7,9 +7,11 @@ package shapes;
 public class Circle extends Shape {
     //data
     private double r;
+    private double area;
 
     public Circle(double r) {
         this.r = r;
+        this.area = computeArea();
     }
     
     //udelat za DU
@@ -24,6 +26,11 @@ public class Circle extends Shape {
     
     public double getR(){
         return r;
+    }
+    
+    @Override
+    public double getArea(){
+        return area;
     }
 
     @Override

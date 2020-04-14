@@ -1,4 +1,4 @@
-package shapes;
+package inheritanceVariant;
 
 /**
  *
@@ -13,6 +13,8 @@ public abstract class Shape {
     //methods
     //potomci zdedi ze maji tuto metodu, ale musi ji mit naimplementovanou sami
     public abstract double computeArea();
+    
+    public abstract double getArea();
     
     public String getShapeName(){
         return this.getClass().getSimpleName();

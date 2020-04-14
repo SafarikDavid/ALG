@@ -1,4 +1,4 @@
-package shapes;
+package inheritanceVariant;
 
 /**
  *
@@ -8,10 +8,12 @@ public class Rectangle extends Shape {
     //data
     private double a;
     private double b;
+    private double area;
 
     public Rectangle(double a, double b) {
         this.a = a;
         this.b = b;
+        this.area = computeArea();
     }
 
     public double getA() {
@@ -20,6 +22,11 @@ public class Rectangle extends Shape {
 
     public double getB() {
         return b;
+    }
+    
+    @Override
+    public double getArea(){
+        return area;
     }
 
     @Override

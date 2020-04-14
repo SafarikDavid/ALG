@@ -1,6 +1,5 @@
 package interfaceVariant;
 
-import shapes.*;
 import java.util.ArrayList;
 
 /**

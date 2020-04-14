@@ -1,4 +1,4 @@
-package shapes;
+package inheritanceVariant;
 
 import java.util.ArrayList;
 
