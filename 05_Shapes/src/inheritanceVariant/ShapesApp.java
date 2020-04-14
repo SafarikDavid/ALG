@@ -198,7 +198,7 @@ public class ShapesApp {
     private static int findWithMaxArea() {
         double max = -Double.MAX_VALUE;
         int maxIndex = 0;
-        for(int i = 0; i < shapes.size() - 1; i++){
+        for(int i = 0; i < shapes.size(); i++){
             if(shapes.get(i).getArea() > max){
                 max = shapes.get(i).getArea();
                 maxIndex = i;
