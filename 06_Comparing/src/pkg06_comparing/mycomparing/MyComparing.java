@@ -1,4 +1,7 @@
-package pkg06_comparing;
+package pkg06_comparing.mycomparing;
+
+import pkg06_comparing.DataSource;
+import pkg06_comparing.Student;
 
 /**
  *
@@ -8,19 +11,27 @@ public class MyComparing {
     public static void main(String[] args){
         Student[] students = DataSource.loadDataAsArray();
         print(students);
-        System.out.println("Sorting by number:");
-        sortByNumber(students);
+        System.out.println("Sort by number");
+        sort(students, new ComparatorStudentByNumber());
         print(students);
-        System.out.println("");
+        System.out.println("Sort by first name");
+        sort(students, new ComparatorStudentByFirstName());
         print(students);
-        System.out.println("Sorting by age:");
-        sortByAge(students);
-        print(students);
-        System.out.println("");
-        print(students);
-        System.out.println("Sorting by number:");
-        sort(students);
-        print(students);
+//        System.out.println(students[0].equals(students[0].equals(students[1])));
+//        print(students);
+//        System.out.println("Sorting by number:");
+//        sortByNumber(students);
+//        print(students);
+//        System.out.println("");
+//        print(students);
+//        System.out.println("Sorting by age:");
+//        sortByAge(students);
+//        print(students);
+//        System.out.println("");
+//        print(students);
+//        System.out.println("Sorting by number:");
+//        sort(students);
+//        print(students);
     }
     
     public static void sort(CompareInterface[] array){
@@ -57,6 +68,19 @@ public class MyComparing {
                 }
             }
         }
+    }
+    
+    //tridi pole jakychkoliv objektu, metoda bigger objektu typove kompatibilniho s ComparatorInterface definuje jak tridit
+    public static void sort(Object [] array, ComparatorInterface comparator){
+        for(int i = 0; i < array.length-1; i++){
+            for(int j = 1; j < array.length-i; j++){
+                if(comparator.bigger(array[j-1],array[j])){
+                    Object temp = array[j];
+                    array[j] = array[j-1];
+                    array[j-1] = temp;
+                }
+            }
+        }   
     }
     
     public static void print(CompareInterface[] array){

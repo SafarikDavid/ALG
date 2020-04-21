@@ -1,5 +1,8 @@
 package pkg06_comparing;
 
+import pkg06_comparing.mycomparing.CompareInterface;
+import java.util.Objects;
+
 /**
  *
  * @author David Šafařík
@@ -9,7 +12,7 @@ public class Student implements CompareInterface, Comparable<Student>{
     private String firstName;
     private String lastName;
     private int age;
-    private int number;
+    private int studentNumber;
     private int[] grades; //max 10
     private final int GRADE_CAPACITY = 10;
     private double averageG;
@@ -24,7 +27,7 @@ public class Student implements CompareInterface, Comparable<Student>{
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.number = number;
+        this.studentNumber = number;
         this.grades = new int[0];
     }
     
@@ -32,32 +35,32 @@ public class Student implements CompareInterface, Comparable<Student>{
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.number = number;
+        this.studentNumber = number;
         this.grades = new int[0];
         addGrades(grades);
     }
 
     @Override
     public String toString() {
-        return "Student{" + "firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", number=" + number + ", averageG=" + averageG + '}';
+        return "Student{" + "firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", number=" + studentNumber + ", averageG=" + averageG + '}';
     }
 
-    boolean startLater(Student student){
-        return this.number > student.number;
+    public boolean startLater(Student student){
+        return this.studentNumber > student.studentNumber;
     }
 
-    boolean isOlder(Student student) {
+    public boolean isOlder(Student student) {
         return this.age > student.age;
     }
 
     @Override
     public boolean isSmaller(CompareInterface o) {
-        return this.number > ((Student)o).number;
+        return this.studentNumber > ((Student)o).studentNumber;
     }
 
 //    @Override
 //    public int compareTo(Object o) { //yaporne, 0, kladne
-//        return this.number - ((Student)o).number;
+//        return this.studentNumber - ((Student)o).studentNumber;
 //    }
 
     //genericita
@@ -109,6 +112,69 @@ public class Student implements CompareInterface, Comparable<Student>{
             System.out.print(i + " ");
         }
         System.out.print("}\n");
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getStudentNumber() {
+        return studentNumber;
+    }
+
+    public int[] getGrades() {
+        return grades;
+    }
+
+    public int getGRADE_CAPACITY() {
+        return GRADE_CAPACITY;
+    }
+
+    public double getAverageG() {
+        return averageG;
+    }
+    
+    //pri zmene equals zmenit i hash
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.firstName);
+        hash = 29 * hash + Objects.hashCode(this.lastName);
+        hash = 29 * hash + this.studentNumber;
+        return hash;
+    }
+    
+    //default in object
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Student other = (Student) obj;
+        if (this.studentNumber != other.studentNumber) {
+            return false;
+        }
+        if (!Objects.equals(this.firstName, other.firstName)) {
+            return false;
+        }
+        if (!Objects.equals(this.lastName, other.lastName)) {
+            return false;
+        }
+        return true;
     }
     
     public static void main(String [] args){

@@ -1,4 +1,4 @@
-package pkg06_comparing;
+package pkg06_comparing.mycomparing;
 
 /**
  *
