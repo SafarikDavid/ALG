@@ -17,6 +17,9 @@ public class MyComparing {
         System.out.println("Sort by first name");
         sort(students, new ComparatorStudentByFirstName());
         print(students);
+        System.out.println("Sort by grades");
+        sort(students, new ComparatorStudentByGrades());
+        print(students);
 //        System.out.println(students[0].equals(students[0].equals(students[1])));
 //        print(students);
 //        System.out.println("Sorting by number:");

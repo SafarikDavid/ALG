@@ -40,7 +40,9 @@ public class Comparing {
         MyComparing.print(students);
         
         
-        
+        System.out.println("Sort podle známek");
+        MyComparing.print(students);
+        Arrays.sort(students, new ComparatorByGrades());
         
         
 //        System.out.println("sort by number");

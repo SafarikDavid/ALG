@@ -4,7 +4,7 @@ package interfaceVariant;
  *
  * @author David Šafařík
  */
-public interface ShapeInterface {
+public interface ShapeInterface{
     //data
     final String NAME = "Geometric shape";
     

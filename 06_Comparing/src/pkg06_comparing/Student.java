@@ -67,9 +67,10 @@ public class Student implements CompareInterface, Comparable<Student>{
     @Override
     public int compareTo(Student o) {//zaporne, 0, kladne
         double epsilon = .0001;
-        if(Math.abs(this.averageG - o.averageG) < epsilon){
+        double diff = this.averageG - o.averageG;
+        if(Math.abs(diff) < epsilon){
             return 0;
-        }else if((this.averageG - o.averageG) > 0){
+        }else if((diff) > 0){
             return 1;
         }else{
             return -1;

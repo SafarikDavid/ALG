@@ -86,6 +86,7 @@ public class ShapesApp {
                 case 7:
                     System.out.println("Shapes, sorted:");
                     sortByArea();
+                    printShapes();
                     break;
                 default:
                     System.out.println("Choice not in the menu!");
@@ -222,16 +223,9 @@ public class ShapesApp {
     }
 
     /**
-     * Makes a clone of the ArrayList<Shape> instance and sorts it, then displays it
+     * Sorts the ArrayList<ShapeInterface>
      */
     private static void sortByArea() {
-        ArrayList<ShapeInterface> clone = new ArrayList<>(shapes.size());
-        for(ShapeInterface s : shapes){
-            clone.add(s);
-        }
-        clone.sort(Comparator.comparing((name) -> name.getArea()));
-        for(ShapeInterface s : clone){
-            System.out.println(s.toString());
-        }
+        shapes.sort(Comparator.comparing((name) -> name.getArea()));
     }
 }

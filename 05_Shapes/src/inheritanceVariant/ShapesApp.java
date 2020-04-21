@@ -1,6 +1,7 @@
 package inheritanceVariant;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -85,6 +86,7 @@ public class ShapesApp {
                 case 7:
                     System.out.println("Shapes, sorted:");
                     sortByArea();
+                    printShapes();
                     break;
                 default:
                     System.out.println("Choice not in the menu!");
@@ -221,16 +223,17 @@ public class ShapesApp {
     }
 
     /**
-     * Makes a clone of the ArrayList<Shape> instance and sorts it, then displays it
+     * Sorts the ArrayList<Shape>
      */
     private static void sortByArea() {
-        ArrayList<Shape> clone = new ArrayList<>(shapes.size());
-        for(Shape s : shapes){
-            clone.add(s);
-        }
-        clone.sort(Comparator.comparing((name) -> name.getArea()));
-        for(Shape s : clone){
-            System.out.println(s.toString());
+        for(int i = 0; i < shapes.size() - 1; i++){
+            for(int j = 1; j < shapes.size() - i; j++){
+                if(shapes.get(j - 1).compareTo(shapes.get(j)) == 1){
+                    Shape temp = shapes.get(j - 1);
+                    shapes.set(j - 1, shapes.get(j));
+                    shapes.set(j, temp);
+                }
+            }
         }
     }
 }
