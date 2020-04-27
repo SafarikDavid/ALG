@@ -29,7 +29,11 @@ public class Calendar {
         return year;
     }
     
-    public String makeCalendar(){
+    /**
+     * Builds a Windows like calendar
+     * @return String with formated calendar
+     */
+    public String displayCalendar(){
         StringBuilder sb = new StringBuilder();
         sb.append(getDayNameString(dayOfWeek())).append(" ").append(day).append(" ").append(getMonthNameString(this.month)).append(" ").append(this.getYear());
         sb.append("\nSun Mon Tue Wed Thu Fri Sat\n");
@@ -50,11 +54,21 @@ public class Calendar {
         return sb.toString();
     }
     
+    /**
+     * Gives an English name of a day according to the input number
+     * @param day number from 1 to 7
+     * @return English names of days with Sunday = 1,... , Saturday = 7 
+     */
     private static String getDayNameString(int day){
         final String[] DAYS_STRINGS = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
         return DAYS_STRINGS[day-1];
     }
     
+    /**
+     * Gives an English name if a month according to the input number
+     * @param month number form 1 to 12
+     * @return English names of months with January being 1
+     */
     private static String getMonthNameString(int month){
         final String[] MONTHS_STRINGS = {"January","February","March","April","May","June","July","August","September","October","November","December"};
         return MONTHS_STRINGS[month-1];
@@ -158,29 +172,29 @@ public class Calendar {
         Calendar cal = new Calendar(4,1,2020);
         System.out.println(cal.dayOfWeek());
         System.out.println(isLeapYear(2020));
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         cal.nextMonth();
-        System.out.println(cal.makeCalendar());
+        System.out.println(cal.displayCalendar());
         Calendar cal2 = new Calendar(1,2,2020);
         System.out.println(cal2.dayOfWeek());
     }
