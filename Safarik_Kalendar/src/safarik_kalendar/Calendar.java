@@ -11,10 +11,10 @@ public class Calendar {
     private static int[] daysInMonths = {31,28,31,30,31,30,31,31,30,31,30,31};
 
     public Calendar(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
         this.year = year;
         checkLeapYear(year);
+        this.month = (checkMonthLimit(month))?month:daysInMonths.length;
+        this.day = (checkDayLimit(day, this.month))?day:daysInMonths[this.month-1];
     }
 
     public int getDay() {
@@ -27,6 +27,25 @@ public class Calendar {
 
     public int getYear() {
         return year;
+    }
+    
+    /**
+     * checks whether the input day exceeds the number of days in a given month
+     * @param d day number
+     * @param m month number
+     * @return true if in limits
+     */
+    private static boolean checkDayLimit(int d, int m){
+        return d <= daysInMonths[m-1];
+    }
+    
+    /**
+     * Checks whether the input month exceeds the maximum of 12 months in a year
+     * @param m month number
+     * @return true if in limits
+     */
+    private static boolean checkMonthLimit(int m){
+        return m <= daysInMonths.length;
     }
     
     /**
@@ -168,34 +187,96 @@ public class Calendar {
         checkLeapYear(this.year);
     }
     
+    /**
+     * changes the current month to the previous, but changes days to the last day of the new month
+     */
+    public void previousMonthLastDay(){
+        if(month == 1){
+            this.month = daysInMonths.length;
+            this.year -= 1;
+        }else{
+            this.month -= 1;
+        }
+        this.day = daysInMonths[month-1];
+        checkLeapYear(this.year);
+    }
+    
+    /**
+     * changes the current day to the next
+     */
+    public void nextDay(){
+        if(checkDayLimit(day + 1, month)){
+            day += 1;
+        }else{
+            nextMonth();
+        }
+    }
+    
+    /**
+     * changes the current day to the previous
+     */
+    public void previousDay(){
+        if(day - 1 < 1){
+            previousMonthLastDay();
+        }else{
+            day -= 1;
+        }
+    }
+    
+    /**
+     * Changes the current to year to the next. Changes day and month to 1.
+     */
+    public void nextYear(){
+        year += 1;
+        day = 1;
+        month = 1;
+    }
+    
+    /**
+     * Changes the current to year to the previous. Changes day and month to 1.
+     */
+    public void previousYear(){
+        year -= 1;
+        day = 1;
+        month = 1;
+    }
+    
     public static void main(String[] args){
-        Calendar cal = new Calendar(4,1,2020);
-        System.out.println(cal.dayOfWeek());
-        System.out.println(isLeapYear(2020));
+        Calendar cal = new Calendar(16,15,2020);
+        cal.nextYear();
         System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        cal.nextMonth();
-        System.out.println(cal.displayCalendar());
-        Calendar cal2 = new Calendar(1,2,2020);
-        System.out.println(cal2.dayOfWeek());
+//        System.out.println(cal.displayCalendar());
+//        cal.previousDay();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextDay();
+//        System.out.println(cal.displayCalendar());
+//        
+//        System.out.println(cal.dayOfWeek());
+//        System.out.println(isLeapYear(2020));
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        cal.nextMonth();
+//        System.out.println(cal.displayCalendar());
+//        Calendar cal2 = new Calendar(1,2,2020);
+//        System.out.println(cal2.dayOfWeek());
     }
 }
