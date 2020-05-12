@@ -50,24 +50,28 @@ public class HurricanesData {
         return sb.toString();
     }
     
-    /**
-     * Gets category and speed info about a hurricane
-     * @param name
-     * @return String with category and speed of hurricane with input name
-     */
-    public String getCategoryAndSpeedByName(String name){
-        StringBuilder sb = new StringBuilder();
-        Hurricane h = findHurricaneByName(name);
-        sb.append(h.getCategory()).append(" ").append(h.getSpeed());
-        return sb.toString();
-    }
+//    /**
+//     * Gets category and speed info about a hurricane
+//     * @param name
+//     * @return String with category and speed of hurricane with input name
+//     */
+//    public int[] getCategoryAndSpeedByName(String name){
+////        StringBuilder sb = new StringBuilder();
+//        Hurricane h = findHurricaneByName(name);
+////        sb.append(h.getCategory()).append(" ").append(h.getSpeed());
+////        return sb.toString();
+//        int[] categoryAndSpeed = new int[2];
+//        categoryAndSpeed[0] = h.getCategory();
+//        categoryAndSpeed[1] = h.getSpeed();
+//        return categoryAndSpeed;
+//    }
     
     /**
      * Finds a hurricane by input name
      * @param name
      * @return Hurricane object
      */
-    private Hurricane findHurricaneByName(String name){
+    public Hurricane findHurricaneByName(String name){
         for(Hurricane h : hurricaneData){
             if(h.getName().equals(name)){
                 return h;
@@ -115,7 +119,6 @@ public class HurricanesData {
         try{
             h.load("hurricanedata.txt");
             //System.out.println(h.getInfoThgroughYears(1999, 2003));
-            System.out.println(h.getCategoryAndSpeedByName("Rina"));
             System.out.println(h);
             System.out.println(h.getDataSortedBySpeed());
         }
