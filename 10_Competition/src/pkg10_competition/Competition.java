@@ -1,12 +1,17 @@
 package pkg10_competition;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,20 +30,37 @@ class Competition {
         int n = 1;
         while(iterator.hasNext()){
             Runner r = iterator.next();
-            sb.append(String.format("%-4d. %s", n, r));
+            sb.append(String.format("%-2d. %s%n", n, r));
             n++;
         }
         return sb.toString();
     }
-
-    public String saveResults() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void saveResults(String resultFilePath) throws IOException {
+        Collections.sort(runners);
+        Writer w;
+        if(resultFilePath.endsWith(".txt")){
+            w = new TextWriter();
+        }else if(resultFilePath.endsWith(".dat")){
+            w = new BinaryWriter();
+        }else{
+            throw new IllegalArgumentException("Nepodporovana koncovka souboru.");
+        }
+        w.save(resultFilePath, runners);
     }
 
-    public void load(String startFile, String finishFile) throws FileNotFoundException {
+    public void load(String startFilePath, String finishFilePath) throws FileNotFoundException, IOException {
+//        start19.txt start2019v2 Strat19 Start2019 od 2000 2030
+//        if(!(startFilePath.matches("^[Ss]tart(20)?([0-2][0-9]|30).*"))){
+//            throw new IllegalArgumentException("Nepovoleny nazev souboru.");
+//        }
+//        if(!(startFilePath.endsWith(".txt") && finishFilePath.endsWith(".txt"))){
+//            throw new IllegalArgumentException("Nepovolena koncovka souboru.");
+//             throw new IllegalExtensionException("Nepovolena koncovka souboru."); //vlastni vyjimka
+//        }
         //nacitani pomoci scanneru
-        File startFileF = new File(startFile);
-        Scanner inStart = new Scanner(startFileF);
+        File startFileF = new File(startFilePath);
+        Scanner inStart = new Scanner(startFileF); //vyhazuje cizi vyjimku
         while(inStart.hasNext()){
             int number = inStart.nextInt();
             String firstName = inStart.next();
@@ -49,23 +71,32 @@ class Competition {
             runners.add(r);
         }
         //nacitani BufferBreeder
-        File finishFileF = new File(finishFile);
+        File finishFile = new File(finishFilePath);
         BufferedReader inFinish = null;
         try{
-            inFinish = new BufferedReader(new FileReader(finishFileF));
+            inFinish = new BufferedReader(new FileReader(finishFile));
             String line;
             while((line = inFinish.readLine()) != null){ //101 10:02:00:000
                 String[] parts = line.split("[ ]+");
-                Runner r = findRunner(Integer.parseInt(parts[0]));
-                r.setFinishTime(parts[1]);
+                try{
+                    Runner r = findRunner(Integer.parseInt(parts[0]));
+                    r.setFinishTime(parts[1]);
+                }catch(NoSuchElementException e){
+                    System.err.print(e.getMessage()); //neexistujici bezec se preskoci
+                }
             }
         }finally{
             if(inFinish != null) inFinish.close();
         }
     }
 
-    private Runner findRunner(int parseInt) {
-        
+    private Runner findRunner(int number) {
+        for (Runner runner : runners) {
+            if(runner.getNumber() == number){
+                return runner;
+            }
+        }
+        throw new NoSuchElementException("Bezec s cislem " + number + " nebyl na startu.");
     }
     
     @Override

@@ -21,21 +21,26 @@ public static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Zadej jmena vstupnich souboru:");
         Competition c = new Competition();
-        String startFile = sc.next();
-        String finishFile = sc.next();
         try{
             while(true){
                 try {
+                    String startFile = sc.next();
+                    String finishFile = sc.next();
                     c.load(startFile, finishFile);
                     break;
-                } catch (FileNotFoundException ex) {
-                    System.out.println("Neexistujici soubor.");
+//                }catch(IOException e){
+//                  tadyto by prekrylo FileNotFoundException  
+//                }catch(IllegalArgumentException e){
+//                    System.out.println(e.getMessage() + "Zadej znovu.");
+                } catch (FileNotFoundException | IllegalArgumentException e) {
+                    System.out.println("Zadany soubor neexistuje nebo je to neco jinyho");
+                    e.printStackTrace();
                 }
             }
             System.out.println(c.getResults());
             System.out.println("Zadej jmeno vysledkoveho souboru.");
             String resultFile = sc.next();
-            c.saveResults();
+            c.saveResults(resultFile);
         }catch(IOException e){
             System.out.println("Nepovedlo se");
         }
