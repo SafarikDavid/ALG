@@ -1,0 +1,245 @@
+\hypertarget{classsafarik__hurricane_1_1_hurricane}{}\doxysection{Dokumentace třídy safarik\+\_\+hurricane.\+Hurricane}
+\label{classsafarik__hurricane_1_1_hurricane}\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsection*{Veřejné metody}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_ac08513bad7d94164380ed08280702bb2}{Hurricane}} (int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_add8b5deeac1b4545647f35d9b01b16cf}{year}}, String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a147ba5d04e8854ace2ac678b36ebffc4}{month}}, int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a337c69b00693fd66c620a08c842cd8c6}{pressure}}, int knots, String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a2e89063cd992def740259d2986069cad}{name}})
+\item 
+int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a6e5be91a68ca3effa987ddbbeca40592}{get\+Year}} ()
+\item 
+float \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a0804eb0b134c13e6c5cd4e42bcf7c502}{get\+Speed}} ()
+\item 
+int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_ad621ef9dc5105c7e55ab35f34a1c7802}{get\+Category}} ()
+\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a9ec34d190d4b53bd6f1393061936d527}{get\+Name}} ()
+\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a8a63d3c89aecc0381c4af98dc9a3ff54}{to\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Statické veřejné metody}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a20fdbacfdce91c3d13fbfdf7e4130581}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Statické privátní metody}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a8345bc0132f2fcd71a295fdb3d21e51e}{convert\+Knots\+To\+Km}} (int knots)
+\begin{DoxyCompactList}\small\item\em Converts knots/h to km/h. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_ab18e4425fbd0b4e0ba3ae0e63779fdc9}{calculate\+Saffir\+Simpson\+Scale}} (float \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a7f75c1ec29d4d7573a6b9f3f2ee2462e}{speed}})
+\begin{DoxyCompactList}\small\item\em Determines the category on the Simpson hurricane scale by km/h Five ≥ 70 m/s ≥ 137 kn ≥ 157 mph ≥ 252 km/h ~\newline
+ Four 58–70 m/s 113–136 kn 130–156 mph 209–251 km/h ~\newline
+ Three 50–58 m/s 96–112 kn 111–129 mph 178–208 km/h ~\newline
+ Two 43–49 m/s 83–95 kn 96–110 mph 154–177 km/h ~\newline
+ One 33–42 m/s 64–82 kn 74–95 mph 119–153 km/h. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Privátní atributy}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_add8b5deeac1b4545647f35d9b01b16cf}{year}}
+\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a147ba5d04e8854ace2ac678b36ebffc4}{month}}
+\item 
+int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a337c69b00693fd66c620a08c842cd8c6}{pressure}}
+\item 
+float \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a7f75c1ec29d4d7573a6b9f3f2ee2462e}{speed}}
+\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_a2e89063cd992def740259d2986069cad}{name}}
+\item 
+int \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane_ac80c22b6c594402354fd2948c0f94b45}{category}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+\begin{DoxyAuthor}{Autor}
+David 
+\end{DoxyAuthor}
+
+
+Definice je uvedena na řádku 7 v souboru Hurricane.\+java.
+
+
+
+\doxysubsection{Dokumentace konstruktoru a destruktoru}
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_ac08513bad7d94164380ed08280702bb2}\label{classsafarik__hurricane_1_1_hurricane_ac08513bad7d94164380ed08280702bb2}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!Hurricane@{Hurricane}}
+\index{Hurricane@{Hurricane}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{Hurricane()}{Hurricane()}}
+{\footnotesize\ttfamily safarik\+\_\+hurricane.\+Hurricane.\+Hurricane (\begin{DoxyParamCaption}\item[{int}]{year,  }\item[{String}]{month,  }\item[{int}]{pressure,  }\item[{int}]{knots,  }\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 15 v souboru Hurricane.\+java.
+
+
+
+\doxysubsection{Dokumentace k metodám}
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_ab18e4425fbd0b4e0ba3ae0e63779fdc9}\label{classsafarik__hurricane_1_1_hurricane_ab18e4425fbd0b4e0ba3ae0e63779fdc9}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!calculateSaffirSimpsonScale@{calculateSaffirSimpsonScale}}
+\index{calculateSaffirSimpsonScale@{calculateSaffirSimpsonScale}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{calculateSaffirSimpsonScale()}{calculateSaffirSimpsonScale()}}
+{\footnotesize\ttfamily static int safarik\+\_\+hurricane.\+Hurricane.\+calculate\+Saffir\+Simpson\+Scale (\begin{DoxyParamCaption}\item[{float}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Determines the category on the Simpson hurricane scale by km/h Five ≥ 70 m/s ≥ 137 kn ≥ 157 mph ≥ 252 km/h ~\newline
+ Four 58–70 m/s 113–136 kn 130–156 mph 209–251 km/h ~\newline
+ Three 50–58 m/s 96–112 kn 111–129 mph 178–208 km/h ~\newline
+ Two 43–49 m/s 83–95 kn 96–110 mph 154–177 km/h ~\newline
+ One 33–42 m/s 64–82 kn 74–95 mph 119–153 km/h. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em speed} & in km/h, ceils input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+0 if not on scale, else 1 -\/ 5 according to scale 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 43 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a8345bc0132f2fcd71a295fdb3d21e51e}\label{classsafarik__hurricane_1_1_hurricane_a8345bc0132f2fcd71a295fdb3d21e51e}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!convertKnotsToKm@{convertKnotsToKm}}
+\index{convertKnotsToKm@{convertKnotsToKm}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{convertKnotsToKm()}{convertKnotsToKm()}}
+{\footnotesize\ttfamily static float safarik\+\_\+hurricane.\+Hurricane.\+convert\+Knots\+To\+Km (\begin{DoxyParamCaption}\item[{int}]{knots }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Converts knots/h to km/h. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em knots} & integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+knots/hour converted to (float) kilometers/hour 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 29 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_ad621ef9dc5105c7e55ab35f34a1c7802}\label{classsafarik__hurricane_1_1_hurricane_ad621ef9dc5105c7e55ab35f34a1c7802}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!getCategory@{getCategory}}
+\index{getCategory@{getCategory}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{getCategory()}{getCategory()}}
+{\footnotesize\ttfamily int safarik\+\_\+hurricane.\+Hurricane.\+get\+Category (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 68 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a9ec34d190d4b53bd6f1393061936d527}\label{classsafarik__hurricane_1_1_hurricane_a9ec34d190d4b53bd6f1393061936d527}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!getName@{getName}}
+\index{getName@{getName}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricane.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 72 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a0804eb0b134c13e6c5cd4e42bcf7c502}\label{classsafarik__hurricane_1_1_hurricane_a0804eb0b134c13e6c5cd4e42bcf7c502}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily float safarik\+\_\+hurricane.\+Hurricane.\+get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 64 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a6e5be91a68ca3effa987ddbbeca40592}\label{classsafarik__hurricane_1_1_hurricane_a6e5be91a68ca3effa987ddbbeca40592}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!getYear@{getYear}}
+\index{getYear@{getYear}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily int safarik\+\_\+hurricane.\+Hurricane.\+get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 60 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a20fdbacfdce91c3d13fbfdf7e4130581}\label{classsafarik__hurricane_1_1_hurricane_a20fdbacfdce91c3d13fbfdf7e4130581}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!main@{main}}
+\index{main@{main}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void safarik\+\_\+hurricane.\+Hurricane.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definice je uvedena na řádku 81 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a8a63d3c89aecc0381c4af98dc9a3ff54}\label{classsafarik__hurricane_1_1_hurricane_a8a63d3c89aecc0381c4af98dc9a3ff54}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!toString@{toString}}
+\index{toString@{toString}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricane.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 77 v souboru Hurricane.\+java.
+
+
+
+\doxysubsection{Dokumentace k datovým členům}
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_ac80c22b6c594402354fd2948c0f94b45}\label{classsafarik__hurricane_1_1_hurricane_ac80c22b6c594402354fd2948c0f94b45}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!category@{category}}
+\index{category@{category}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{category}{category}}
+{\footnotesize\ttfamily int safarik\+\_\+hurricane.\+Hurricane.\+category\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 13 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a147ba5d04e8854ace2ac678b36ebffc4}\label{classsafarik__hurricane_1_1_hurricane_a147ba5d04e8854ace2ac678b36ebffc4}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!month@{month}}
+\index{month@{month}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{month}{month}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricane.\+month\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 9 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a2e89063cd992def740259d2986069cad}\label{classsafarik__hurricane_1_1_hurricane_a2e89063cd992def740259d2986069cad}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!name@{name}}
+\index{name@{name}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricane.\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 12 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a337c69b00693fd66c620a08c842cd8c6}\label{classsafarik__hurricane_1_1_hurricane_a337c69b00693fd66c620a08c842cd8c6}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!pressure@{pressure}}
+\index{pressure@{pressure}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{pressure}{pressure}}
+{\footnotesize\ttfamily int safarik\+\_\+hurricane.\+Hurricane.\+pressure\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 10 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_a7f75c1ec29d4d7573a6b9f3f2ee2462e}\label{classsafarik__hurricane_1_1_hurricane_a7f75c1ec29d4d7573a6b9f3f2ee2462e}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!speed@{speed}}
+\index{speed@{speed}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float safarik\+\_\+hurricane.\+Hurricane.\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 11 v souboru Hurricane.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricane_add8b5deeac1b4545647f35d9b01b16cf}\label{classsafarik__hurricane_1_1_hurricane_add8b5deeac1b4545647f35d9b01b16cf}} 
+\index{safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}!year@{year}}
+\index{year@{year}!safarik\_hurricane.Hurricane@{safarik\_hurricane.Hurricane}}
+\doxysubsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily int safarik\+\_\+hurricane.\+Hurricane.\+year\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 8 v souboru Hurricane.\+java.
+

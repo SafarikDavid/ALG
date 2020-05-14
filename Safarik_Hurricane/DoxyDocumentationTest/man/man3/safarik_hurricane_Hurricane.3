@@ -1,0 +1,197 @@
+.TH "safarik_hurricane.Hurricane" 3 "čt 14. kvě 2020" "Version Final" "Hurricanes_Documentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+safarik_hurricane.Hurricane
+.SH SYNOPSIS
+.br
+.PP
+.SS "Veřejné metody"
+
+.in +1c
+.ti -1c
+.RI "\fBHurricane\fP (int \fByear\fP, String \fBmonth\fP, int \fBpressure\fP, int knots, String \fBname\fP)"
+.br
+.ti -1c
+.RI "int \fBgetYear\fP ()"
+.br
+.ti -1c
+.RI "float \fBgetSpeed\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetCategory\fP ()"
+.br
+.ti -1c
+.RI "String \fBgetName\fP ()"
+.br
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Statické veřejné metody"
+
+.in +1c
+.ti -1c
+.RI "static void \fBmain\fP (String[] args)"
+.br
+.in -1c
+.SS "Statické privátní metody"
+
+.in +1c
+.ti -1c
+.RI "static float \fBconvertKnotsToKm\fP (int knots)"
+.br
+.RI "Converts knots/h to km/h\&. "
+.ti -1c
+.RI "static int \fBcalculateSaffirSimpsonScale\fP (float \fBspeed\fP)"
+.br
+.RI "Determines the category on the Simpson hurricane scale by km/h Five ≥ 70 m/s ≥ 137 kn ≥ 157 mph ≥ 252 km/h 
+.br
+ Four 58–70 m/s 113–136 kn 130–156 mph 209–251 km/h 
+.br
+ Three 50–58 m/s 96–112 kn 111–129 mph 178–208 km/h 
+.br
+ Two 43–49 m/s 83–95 kn 96–110 mph 154–177 km/h 
+.br
+ One 33–42 m/s 64–82 kn 74–95 mph 119–153 km/h\&. "
+.in -1c
+.SS "Privátní atributy"
+
+.in +1c
+.ti -1c
+.RI "int \fByear\fP"
+.br
+.ti -1c
+.RI "String \fBmonth\fP"
+.br
+.ti -1c
+.RI "int \fBpressure\fP"
+.br
+.ti -1c
+.RI "float \fBspeed\fP"
+.br
+.ti -1c
+.RI "String \fBname\fP"
+.br
+.ti -1c
+.RI "int \fBcategory\fP"
+.br
+.in -1c
+.SH "Detailní popis"
+.PP 
+
+.PP
+\fBAutor\fP
+.RS 4
+David 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 7 v souboru Hurricane\&.java\&.
+.SH "Dokumentace konstruktoru a destruktoru"
+.PP 
+.SS "safarik_hurricane\&.Hurricane\&.Hurricane (int year, String month, int pressure, int knots, String name)"
+
+.PP
+Definice je uvedena na řádku 15 v souboru Hurricane\&.java\&.
+.SH "Dokumentace k metodám"
+.PP 
+.SS "static int safarik_hurricane\&.Hurricane\&.calculateSaffirSimpsonScale (float speed)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Determines the category on the Simpson hurricane scale by km/h Five ≥ 70 m/s ≥ 137 kn ≥ 157 mph ≥ 252 km/h 
+.br
+ Four 58–70 m/s 113–136 kn 130–156 mph 209–251 km/h 
+.br
+ Three 50–58 m/s 96–112 kn 111–129 mph 178–208 km/h 
+.br
+ Two 43–49 m/s 83–95 kn 96–110 mph 154–177 km/h 
+.br
+ One 33–42 m/s 64–82 kn 74–95 mph 119–153 km/h\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIspeed\fP in km/h, ceils input 
+.RE
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+0 if not on scale, else 1 - 5 according to scale 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 43 v souboru Hurricane\&.java\&.
+.SS "static float safarik_hurricane\&.Hurricane\&.convertKnotsToKm (int knots)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Converts knots/h to km/h\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIknots\fP integer 
+.RE
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+knots/hour converted to (float) kilometers/hour 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 29 v souboru Hurricane\&.java\&.
+.SS "int safarik_hurricane\&.Hurricane\&.getCategory ()"
+
+.PP
+Definice je uvedena na řádku 68 v souboru Hurricane\&.java\&.
+.SS "String safarik_hurricane\&.Hurricane\&.getName ()"
+
+.PP
+Definice je uvedena na řádku 72 v souboru Hurricane\&.java\&.
+.SS "float safarik_hurricane\&.Hurricane\&.getSpeed ()"
+
+.PP
+Definice je uvedena na řádku 64 v souboru Hurricane\&.java\&.
+.SS "int safarik_hurricane\&.Hurricane\&.getYear ()"
+
+.PP
+Definice je uvedena na řádku 60 v souboru Hurricane\&.java\&.
+.SS "static void safarik_hurricane\&.Hurricane\&.main (String[] args)\fC [static]\fP"
+
+.PP
+Definice je uvedena na řádku 81 v souboru Hurricane\&.java\&.
+.SS "String safarik_hurricane\&.Hurricane\&.toString ()"
+
+.PP
+Definice je uvedena na řádku 77 v souboru Hurricane\&.java\&.
+.SH "Dokumentace k datovým členům"
+.PP 
+.SS "int safarik_hurricane\&.Hurricane\&.category\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 13 v souboru Hurricane\&.java\&.
+.SS "String safarik_hurricane\&.Hurricane\&.month\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 9 v souboru Hurricane\&.java\&.
+.SS "String safarik_hurricane\&.Hurricane\&.name\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 12 v souboru Hurricane\&.java\&.
+.SS "int safarik_hurricane\&.Hurricane\&.pressure\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 10 v souboru Hurricane\&.java\&.
+.SS "float safarik_hurricane\&.Hurricane\&.speed\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 11 v souboru Hurricane\&.java\&.
+.SS "int safarik_hurricane\&.Hurricane\&.year\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 8 v souboru Hurricane\&.java\&.
+
+.SH "Autor"
+.PP 
+Generováno automaticky programem Doxygen ze zdrojových textů projektu Hurricanes_Documentations\&.

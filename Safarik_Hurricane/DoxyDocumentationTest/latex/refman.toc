@@ -1,0 +1,61 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\babel@toc {czech}{}
+\contentsline {chapter}{\numberline {1}Rejstřík prostorů jmen}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Balíky}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Rejstřík hierarchie tříd}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Hierarchie tříd}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Rejstřík tříd}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Seznam tříd}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Rejstřík souborů}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Seznam souborů}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Dokumentace prostorů jmen}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Balík safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Dokumentace tříd}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Dokumentace třídy safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Comparator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}By\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Speed}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailní popis}{11}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Dokumentace k metodám}{11}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}compare()}{11}{subsubsection.6.1.2.1}%
+\contentsline {section}{\numberline {6.2}Dokumentace třídy safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricane}{12}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailní popis}{12}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Dokumentace konstruktoru a destruktoru}{12}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Hurricane()}{13}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Dokumentace k metodám}{13}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}calculateSaffirSimpsonScale()}{13}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}convertKnotsToKm()}{13}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}getCategory()}{14}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}getName()}{14}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}getSpeed()}{14}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}getYear()}{14}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}main()}{14}{subsubsection.6.2.3.7}%
+\contentsline {subsubsection}{\numberline {6.2.3.8}toString()}{15}{subsubsection.6.2.3.8}%
+\contentsline {subsection}{\numberline {6.2.4}Dokumentace k datovým členům}{15}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}category}{15}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}month}{15}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}name}{15}{subsubsection.6.2.4.3}%
+\contentsline {subsubsection}{\numberline {6.2.4.4}pressure}{15}{subsubsection.6.2.4.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.5}speed}{15}{subsubsection.6.2.4.5}%
+\contentsline {subsubsection}{\numberline {6.2.4.6}year}{16}{subsubsection.6.2.4.6}%
+\contentsline {section}{\numberline {6.3}Dokumentace třídy safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricanes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data}{16}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailní popis}{16}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Dokumentace k metodám}{16}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}findHurricaneByName()}{16}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}getDataSortedBySpeed()}{17}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}getInfoThgroughYears()}{17}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}load()}{18}{subsubsection.6.3.2.4}%
+\contentsline {subsubsection}{\numberline {6.3.2.5}main()}{18}{subsubsection.6.3.2.5}%
+\contentsline {subsubsection}{\numberline {6.3.2.6}sortBySpeed()}{18}{subsubsection.6.3.2.6}%
+\contentsline {subsubsection}{\numberline {6.3.2.7}toString()}{19}{subsubsection.6.3.2.7}%
+\contentsline {subsection}{\numberline {6.3.3}Dokumentace k datovým členům}{19}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}hurricaneData}{19}{subsubsection.6.3.3.1}%
+\contentsline {section}{\numberline {6.4}Dokumentace třídy safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricane}{19}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailní popis}{19}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Dokumentace k metodám}{19}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}getMenu()}{20}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}main()}{20}{subsubsection.6.4.2.2}%
+\contentsline {subsection}{\numberline {6.4.3}Dokumentace k datovým členům}{20}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}sc}{20}{subsubsection.6.4.3.1}%
+\contentsline {chapter}{\numberline {7}Dokumentace souborů}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Dokumentace souboru src/safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Comparator\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}By\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Speed.java}{21}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Dokumentace souboru src/safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricane.java}{21}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Dokumentace souboru src/safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricanes\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.java}{21}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Dokumentace souboru src/safarik\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}hurricane/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Hurricane.java}{22}{section.7.4}%

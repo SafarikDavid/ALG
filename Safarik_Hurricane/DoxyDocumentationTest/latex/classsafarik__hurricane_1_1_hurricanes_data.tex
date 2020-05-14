@@ -1,0 +1,188 @@
+\hypertarget{classsafarik__hurricane_1_1_hurricanes_data}{}\doxysection{Dokumentace třídy safarik\+\_\+hurricane.\+Hurricanes\+Data}
+\label{classsafarik__hurricane_1_1_hurricanes_data}\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsection*{Veřejné metody}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_a5375b481efe7bed2191e14a2a795ecca}{load}} (String data\+Path)  throws File\+Not\+Found\+Exception
+\begin{DoxyCompactList}\small\item\em Loads data from a text file into Array\+List. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_ac9166f7697ff643e20d324b7357a9605}{get\+Info\+Thgrough\+Years}} (int year\+Min, int year\+Max)
+\begin{DoxyCompactList}\small\item\em Finds all hurricanes through given years and gives all info about them. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_a422e2c2563038011895ef8323d821288}{find\+Hurricane\+By\+Name}} (String name)
+\begin{DoxyCompactList}\small\item\em Finds a hurricane by input name. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_ad500d4560c5c6fc63205353d9c7afaa6}{get\+Data\+Sorted\+By\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Makes a string of sorted Array\+List$<$\+Hurricane$>$ \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_aaf434e072e35f14ea96f35480ca6682d}{to\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Statické veřejné metody}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_a9695809fbb373706ab393866ff2dfa6e}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Statické privátní metody}
+\begin{DoxyCompactItemize}
+\item 
+static Array\+List$<$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} $>$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_a8556032993840fdeff27a6fd77e6fab4}{sort\+By\+Speed}} (Array\+List$<$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} $>$ hurricanes)
+\begin{DoxyCompactList}\small\item\em Takes an Array\+List$<$\+Hurricane$>$, copies it and sorts the copy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Privátní atributy}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} $>$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_acc77bfe67521bc0fdeee2ab4e701bf07}{hurricane\+Data}} = new Array\+List$<$$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailní popis}
+\begin{DoxyAuthor}{Autor}
+David 
+\end{DoxyAuthor}
+
+
+Definice je uvedena na řádku 13 v souboru Hurricanes\+Data.\+java.
+
+
+
+\doxysubsection{Dokumentace k metodám}
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_a422e2c2563038011895ef8323d821288}\label{classsafarik__hurricane_1_1_hurricanes_data_a422e2c2563038011895ef8323d821288}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!findHurricaneByName@{findHurricaneByName}}
+\index{findHurricaneByName@{findHurricaneByName}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{findHurricaneByName()}{findHurricaneByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} safarik\+\_\+hurricane.\+Hurricanes\+Data.\+find\+Hurricane\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Finds a hurricane by input name. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} object 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 58 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_ad500d4560c5c6fc63205353d9c7afaa6}\label{classsafarik__hurricane_1_1_hurricanes_data_ad500d4560c5c6fc63205353d9c7afaa6}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!getDataSortedBySpeed@{getDataSortedBySpeed}}
+\index{getDataSortedBySpeed@{getDataSortedBySpeed}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{getDataSortedBySpeed()}{getDataSortedBySpeed()}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricanes\+Data.\+get\+Data\+Sorted\+By\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Makes a string of sorted Array\+List$<$\+Hurricane$>$ 
+
+\begin{DoxyReturn}{Návratová hodnota}
+String with sorted hurricane data 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Viz také}
+\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricanes_data_a8556032993840fdeff27a6fd77e6fab4}{sort\+By\+Speed()}} 
+\end{DoxySeeAlso}
+
+
+Definice je uvedena na řádku 72 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_ac9166f7697ff643e20d324b7357a9605}\label{classsafarik__hurricane_1_1_hurricanes_data_ac9166f7697ff643e20d324b7357a9605}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!getInfoThgroughYears@{getInfoThgroughYears}}
+\index{getInfoThgroughYears@{getInfoThgroughYears}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{getInfoThgroughYears()}{getInfoThgroughYears()}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricanes\+Data.\+get\+Info\+Thgrough\+Years (\begin{DoxyParamCaption}\item[{int}]{year\+Min,  }\item[{int}]{year\+Max }\end{DoxyParamCaption})}
+
+
+
+Finds all hurricanes through given years and gives all info about them. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em year\+Min} & \\
+\hline
+{\em year\+Max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+String with \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} information 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 42 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_a5375b481efe7bed2191e14a2a795ecca}\label{classsafarik__hurricane_1_1_hurricanes_data_a5375b481efe7bed2191e14a2a795ecca}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!load@{load}}
+\index{load@{load}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void safarik\+\_\+hurricane.\+Hurricanes\+Data.\+load (\begin{DoxyParamCaption}\item[{String}]{data\+Path }\end{DoxyParamCaption}) throws File\+Not\+Found\+Exception}
+
+
+
+Loads data from a text file into Array\+List. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em data\+Path} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Výjimky}
+{\em File\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definice je uvedena na řádku 21 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_a9695809fbb373706ab393866ff2dfa6e}\label{classsafarik__hurricane_1_1_hurricanes_data_a9695809fbb373706ab393866ff2dfa6e}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!main@{main}}
+\index{main@{main}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void safarik\+\_\+hurricane.\+Hurricanes\+Data.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definice je uvedena na řádku 102 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_a8556032993840fdeff27a6fd77e6fab4}\label{classsafarik__hurricane_1_1_hurricanes_data_a8556032993840fdeff27a6fd77e6fab4}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!sortBySpeed@{sortBySpeed}}
+\index{sortBySpeed@{sortBySpeed}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{sortBySpeed()}{sortBySpeed()}}
+{\footnotesize\ttfamily static Array\+List$<$\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}}$>$ safarik\+\_\+hurricane.\+Hurricanes\+Data.\+sort\+By\+Speed (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}} $>$}]{hurricanes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Takes an Array\+List$<$\+Hurricane$>$, copies it and sorts the copy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em hurricanes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Návratová hodnota}
+a sorted copy of Array\+List$<$\+Hurricane$>$ 
+\end{DoxyReturn}
+
+
+Definice je uvedena na řádku 86 v souboru Hurricanes\+Data.\+java.
+
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_aaf434e072e35f14ea96f35480ca6682d}\label{classsafarik__hurricane_1_1_hurricanes_data_aaf434e072e35f14ea96f35480ca6682d}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!toString@{toString}}
+\index{toString@{toString}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String safarik\+\_\+hurricane.\+Hurricanes\+Data.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definice je uvedena na řádku 94 v souboru Hurricanes\+Data.\+java.
+
+
+
+\doxysubsection{Dokumentace k datovým členům}
+\mbox{\Hypertarget{classsafarik__hurricane_1_1_hurricanes_data_acc77bfe67521bc0fdeee2ab4e701bf07}\label{classsafarik__hurricane_1_1_hurricanes_data_acc77bfe67521bc0fdeee2ab4e701bf07}} 
+\index{safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}!hurricaneData@{hurricaneData}}
+\index{hurricaneData@{hurricaneData}!safarik\_hurricane.HurricanesData@{safarik\_hurricane.HurricanesData}}
+\doxysubsubsection{\texorpdfstring{hurricaneData}{hurricaneData}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{classsafarik__hurricane_1_1_hurricane}{Hurricane}}$>$ safarik\+\_\+hurricane.\+Hurricanes\+Data.\+hurricane\+Data = new Array\+List$<$$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definice je uvedena na řádku 14 v souboru Hurricanes\+Data.\+java.
+

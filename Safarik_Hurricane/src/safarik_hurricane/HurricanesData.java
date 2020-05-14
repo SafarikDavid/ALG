@@ -50,22 +50,6 @@ public class HurricanesData {
         return sb.toString();
     }
     
-//    /**
-//     * Gets category and speed info about a hurricane
-//     * @param name
-//     * @return String with category and speed of hurricane with input name
-//     */
-//    public int[] getCategoryAndSpeedByName(String name){
-////        StringBuilder sb = new StringBuilder();
-//        Hurricane h = findHurricaneByName(name);
-////        sb.append(h.getCategory()).append(" ").append(h.getSpeed());
-////        return sb.toString();
-//        int[] categoryAndSpeed = new int[2];
-//        categoryAndSpeed[0] = h.getCategory();
-//        categoryAndSpeed[1] = h.getSpeed();
-//        return categoryAndSpeed;
-//    }
-    
     /**
      * Finds a hurricane by input name
      * @param name
@@ -83,6 +67,7 @@ public class HurricanesData {
     /**
      * Makes a string of sorted ArrayList<Hurricane>
      * @return String with sorted hurricane data
+     * @see sortBySpeed()
      */
     public String getDataSortedBySpeed(){
         ArrayList<Hurricane> tempHurricanes = sortBySpeed(hurricaneData);

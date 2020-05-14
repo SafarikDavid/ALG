@@ -1,0 +1,177 @@
+.TH "safarik_hurricane.HurricanesData" 3 "čt 14. kvě 2020" "Version Final" "Hurricanes_Documentations" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+safarik_hurricane.HurricanesData
+.SH SYNOPSIS
+.br
+.PP
+.SS "Veřejné metody"
+
+.in +1c
+.ti -1c
+.RI "void \fBload\fP (String dataPath)  throws FileNotFoundException"
+.br
+.RI "Loads data from a text file into ArrayList\&. "
+.ti -1c
+.RI "String \fBgetInfoThgroughYears\fP (int yearMin, int yearMax)"
+.br
+.RI "Finds all hurricanes through given years and gives all info about them\&. "
+.ti -1c
+.RI "\fBHurricane\fP \fBfindHurricaneByName\fP (String name)"
+.br
+.RI "Finds a hurricane by input name\&. "
+.ti -1c
+.RI "String \fBgetDataSortedBySpeed\fP ()"
+.br
+.RI "Makes a string of sorted ArrayList<Hurricane> "
+.ti -1c
+.RI "String \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Statické veřejné metody"
+
+.in +1c
+.ti -1c
+.RI "static void \fBmain\fP (String[] args)"
+.br
+.in -1c
+.SS "Statické privátní metody"
+
+.in +1c
+.ti -1c
+.RI "static ArrayList< \fBHurricane\fP > \fBsortBySpeed\fP (ArrayList< \fBHurricane\fP > hurricanes)"
+.br
+.RI "Takes an ArrayList<Hurricane>, copies it and sorts the copy\&. "
+.in -1c
+.SS "Privátní atributy"
+
+.in +1c
+.ti -1c
+.RI "ArrayList< \fBHurricane\fP > \fBhurricaneData\fP = new ArrayList<>()"
+.br
+.in -1c
+.SH "Detailní popis"
+.PP 
+
+.PP
+\fBAutor\fP
+.RS 4
+David 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 13 v souboru HurricanesData\&.java\&.
+.SH "Dokumentace k metodám"
+.PP 
+.SS "\fBHurricane\fP safarik_hurricane\&.HurricanesData\&.findHurricaneByName (String name)"
+
+.PP
+Finds a hurricane by input name\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIname\fP 
+.RE
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+\fBHurricane\fP object 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 58 v souboru HurricanesData\&.java\&.
+.SS "String safarik_hurricane\&.HurricanesData\&.getDataSortedBySpeed ()"
+
+.PP
+Makes a string of sorted ArrayList<Hurricane> 
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+String with sorted hurricane data 
+.RE
+.PP
+\fBViz také\fP
+.RS 4
+\fBsortBySpeed()\fP 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 72 v souboru HurricanesData\&.java\&.
+.SS "String safarik_hurricane\&.HurricanesData\&.getInfoThgroughYears (int yearMin, int yearMax)"
+
+.PP
+Finds all hurricanes through given years and gives all info about them\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIyearMin\fP 
+.br
+\fIyearMax\fP 
+.RE
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+String with \fBHurricane\fP information 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 42 v souboru HurricanesData\&.java\&.
+.SS "void safarik_hurricane\&.HurricanesData\&.load (String dataPath) throws FileNotFoundException"
+
+.PP
+Loads data from a text file into ArrayList\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIdataPath\fP 
+.RE
+.PP
+\fBVýjimky\fP
+.RS 4
+\fIFileNotFoundException\fP 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 21 v souboru HurricanesData\&.java\&.
+.SS "static void safarik_hurricane\&.HurricanesData\&.main (String[] args)\fC [static]\fP"
+
+.PP
+Definice je uvedena na řádku 102 v souboru HurricanesData\&.java\&.
+.SS "static ArrayList<\fBHurricane\fP> safarik_hurricane\&.HurricanesData\&.sortBySpeed (ArrayList< \fBHurricane\fP > hurricanes)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Takes an ArrayList<Hurricane>, copies it and sorts the copy\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIhurricanes\fP 
+.RE
+.PP
+\fBNávratová hodnota\fP
+.RS 4
+a sorted copy of ArrayList<Hurricane> 
+.RE
+.PP
+
+.PP
+Definice je uvedena na řádku 86 v souboru HurricanesData\&.java\&.
+.SS "String safarik_hurricane\&.HurricanesData\&.toString ()"
+
+.PP
+Definice je uvedena na řádku 94 v souboru HurricanesData\&.java\&.
+.SH "Dokumentace k datovým členům"
+.PP 
+.SS "ArrayList<\fBHurricane\fP> safarik_hurricane\&.HurricanesData\&.hurricaneData = new ArrayList<>()\fC [private]\fP"
+
+.PP
+Definice je uvedena na řádku 14 v souboru HurricanesData\&.java\&.
+
+.SH "Autor"
+.PP 
+Generováno automaticky programem Doxygen ze zdrojových textů projektu Hurricanes_Documentations\&.
