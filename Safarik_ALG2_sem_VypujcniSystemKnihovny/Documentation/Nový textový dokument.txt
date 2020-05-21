@@ -1,4 +1,4 @@
-Program bude zpracovávat knižní objednávky. Vstupem bude zadání objednávky z konzole a textové soubory s uloženými objednávkami: rozpracované objednávky a zpracované objednávky.
+Program bude zpracovávat knižní výpůjčky. Vstupem bude zadání objednávky z konzole a textové soubory s uloženými objednávkami: rozpracované objednávky a zpracované objednávky.
 Zadané objednávky se budou ukládat do souboru rozpracovaných objednávek ve formátu id, jméno objednávajícího, datum objednávky <zalomení řádku> pod sebe všechny objednané knihy - název, autor, rok vydání, isbn až do středníku, který ukončuje objednávku.
 Zpracované objednávky budou mít navíc datum zpracování.
 Program bude umožňovat zadání objednávky, označení objednávky jako vyřízené, vypsání všech objednávek (přípdaně jen zadaných nebo zpracovaných), střídění výpisu dle jakéhokoliv parametru, nalezení objednávky podle id nebo názvu.

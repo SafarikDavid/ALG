@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  *
- * @author David
+ * @author David Šafařík
  */
 public class Book {
     private String name;
