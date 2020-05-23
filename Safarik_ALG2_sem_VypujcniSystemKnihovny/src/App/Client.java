@@ -27,7 +27,7 @@ public class Client {
         this.rentedBooks = rentedBooks;
     }
     
-    public void addBook(RentedBook book){
+    public void rentBook(RentedBook book){
         rentedBooks.add(book);
     }
 
@@ -59,7 +59,7 @@ public class Client {
     
     public static void main(String[] args){
         Client cus = new Client("Petr", "Orisek", 1);
-//        cus.addBook(new Book("Kaer","JDF",4897645, new Date(1958, 5, 15)));
+//        cus.rentBook(new Book("Kaer","JDF",4897645, new Date(1958, 5, 15)));
         System.out.println(cus.getRentedBooks());
         System.out.println(cus.toString());
     }

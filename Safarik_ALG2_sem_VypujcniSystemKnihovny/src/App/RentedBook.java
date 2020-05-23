@@ -1,5 +1,6 @@
 package App;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -10,8 +11,13 @@ import java.util.Date;
 public class RentedBook extends Book{
     private Date rentDate;
     
+    public RentedBook(String name, String authorName, int ISBN, String publishDate, String rentDate) throws ParseException {
+        super(name, authorName, ISBN, publishDate, true);
+        this.rentDate = SDF.parse(rentDate);
+    }
+    
     public RentedBook(String name, String authorName, int ISBN, Date publishDate, Date rentDate) {
-        super(name, authorName, ISBN, publishDate);
+        super(name, authorName, ISBN, publishDate, true);
         this.rentDate = rentDate;
     }
 
