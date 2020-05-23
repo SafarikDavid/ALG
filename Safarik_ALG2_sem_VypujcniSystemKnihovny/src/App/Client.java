@@ -11,7 +11,7 @@ public class Client {
     private String firstName;
     private String lastName;
     private int ID;
-    private ArrayList<Book> rentedBooks;
+    private ArrayList<RentedBook> rentedBooks;
 
     public Client(String firstName, String lastName, int ID) {
         this.firstName = firstName;
@@ -20,14 +20,14 @@ public class Client {
         rentedBooks = new ArrayList<>();
     }
 
-    public Client(String firstName, String lastName, int ID, ArrayList<Book> rentedBooks) {
+    public Client(String firstName, String lastName, int ID, ArrayList<RentedBook> rentedBooks) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ID = ID;
         this.rentedBooks = rentedBooks;
     }
     
-    public void addBook(Book book){
+    public void addBook(RentedBook book){
         rentedBooks.add(book);
     }
 
@@ -43,7 +43,7 @@ public class Client {
         return ID;
     }
 
-    public ArrayList<Book> getRentedBooks() {
+    public ArrayList<RentedBook> getRentedBooks() {
         return rentedBooks;
     }
     
@@ -51,7 +51,7 @@ public class Client {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(firstName).append(" ").append(lastName).append(" ").append(ID).append("\n");
-        for(Book b : rentedBooks){
+        for(RentedBook b : rentedBooks){
             sb.append(b.toString()).append("\n");
         }
         return firstName + " " + lastName + " " + ID;
@@ -59,7 +59,7 @@ public class Client {
     
     public static void main(String[] args){
         Client cus = new Client("Petr", "Orisek", 1);
-        cus.addBook(new Book("Lpo", "Kaer","JDF",4897645, new Date(1958, 5, 15)));
+//        cus.addBook(new Book("Kaer","JDF",4897645, new Date(1958, 5, 15)));
         System.out.println(cus.getRentedBooks());
         System.out.println(cus.toString());
     }
