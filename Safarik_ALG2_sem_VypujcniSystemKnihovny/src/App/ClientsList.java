@@ -46,6 +46,11 @@ public class ClientsList {
         }
     }
     
+    /**
+     * Najde klienta podle čísla ID. Vrátí index v seznamu klientů.
+     * @param ID
+     * @return -1 pokud nenalezen, jinak index v seznamu klientů
+     */
     private int findClientByID(int ID){
         int i = 0;
         for(Client c : clients){
@@ -54,6 +59,7 @@ public class ClientsList {
             }
             i++;
         }
+        return -1;
     }
 
     @Override

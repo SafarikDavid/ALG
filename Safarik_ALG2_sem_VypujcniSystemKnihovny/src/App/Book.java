@@ -1,13 +1,10 @@
 package App;
 
-import comparing.BookComparatorByName;
 import comparing.BookComparatorByPublishDate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -21,6 +18,22 @@ public class Book {
     private Date publishDate;
     protected final static SimpleDateFormat SDF = new SimpleDateFormat("dd/MM/yyyy");
     private boolean isRented;
+
+    public Book(String name, String authorName, int ISBN, String publishDate) throws ParseException {
+        this.name = name;
+        this.authorName = authorName;
+        this.ISBN = ISBN;
+        this.publishDate = SDF.parse(publishDate);
+        this.isRented = false;
+    }
+    
+    public Book(String name, String authorName, int ISBN, Date publishDate) {
+        this.name = name;
+        this.authorName = authorName;
+        this.ISBN = ISBN;
+        this.publishDate = publishDate;
+        this.isRented = false;
+    }
 
     public Book(String name, String authorName, int ISBN, String publishDate, boolean isRented) throws ParseException {
         this.name = name;
@@ -68,7 +81,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return name + " " + authorName + " " + ISBN + " " + SDF.format(publishDate);
+        return name + ", " + authorName + ", " + ISBN + ", " + SDF.format(publishDate);
     }
     
     public static void main(String[] args) throws ParseException{

@@ -45,8 +45,8 @@ public class TextReaderBook extends Reader{
             }
         }finally{
             if(bookInv != null) bookInv.close();
-            return books;
         }
+        return books;
     }
     
 }

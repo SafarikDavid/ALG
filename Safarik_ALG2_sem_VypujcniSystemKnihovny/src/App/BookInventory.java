@@ -4,18 +4,15 @@ import filehandling.BinaryWriterBook;
 import filehandling.TextReaderBook;
 import filehandling.TextWriterBook;
 import filehandling.Writer;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.NoSuchElementException;
-import sun.text.normalizer.UTF16;
 import comparing.*;
+import filehandling.BinaryReaderBook;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -23,6 +20,7 @@ import comparing.*;
  */
 public class BookInventory {
     private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<RentedBook> rentedBooks = new ArrayList<>();
 
     public BookInventory() {
     }
@@ -40,7 +38,9 @@ public class BookInventory {
         if(path.endsWith(".txt")){
             books = new TextReaderBook().load(path);
         }else if(path.endsWith(".dat")){
-            books = null;
+            books = new BinaryReaderBook().load(path);
+        }else{
+            throw new IllegalArgumentException("Nepodporovana koncovka souboru.");
         }
     }
     
@@ -69,6 +69,76 @@ public class BookInventory {
      */
     public void addBook(Book book) {
         books.add(book);
+    }
+    
+    /**
+     * Vypůjčí knihu. Změní stav knihy na vypůjčeno a přidá knihu do seznamu vypůjčených.
+     * @param ISBN
+     * @return True, pokud je kniha v inventáři; False, pokud se nepodařilo knihu najít
+     * @throws ParseException Špatný formát data
+     */
+    public boolean rentOutBook(int ISBN) throws ParseException{
+        int i = findBookByISBN(ISBN);
+        if(i >= 0){
+            books.get(i).setIsRented(true);
+            Book b = books.get(i);
+            LocalDate today = LocalDate.now();
+            String dateToday = today.getYear() + "/" + today.getMonthValue() + "/" + today.getDayOfMonth();
+            rentedBooks.add(new RentedBook(b.getName(), b.getAuthorName(), b.getISBN(), b.getPublishDateString(), dateToday));
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Vrátí knihu. Smaže jí ze seznamu vypůjčených a změní stav knihy v inventáři na nevypůjčeno.
+     * @param ISBN
+     * @return pokud nebude nalezena kniha s daným ISBN ve kterémkoliv seznamu, vrátí false, jinak true
+     */
+    public boolean returnBook(int ISBN){
+        int i = findRentedBookByISBN(ISBN);
+        if(i >= 0){
+            rentedBooks.remove(i);
+            i = findBookByISBN(ISBN);
+            if(i >= 0){
+                books.get(i).setIsRented(false);
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    
+    /**
+     * Najde knihu podle ISBN hodnoty, vrátí její index v listu.
+     * @param ISBN
+     * @return index v listu, nebo -1 když neni v seznamu
+     */
+    private int findBookByISBN(int ISBN){
+        int i = 0;
+        for(Book b : books){
+           if(b.getISBN() == ISBN){
+               return i;
+           }
+           i++;
+        }
+        return -1;
+    }
+    
+    /**
+     * Najde vypůjčenou knihu podle ISBN hodnoty, vrátí její index v listu.
+     * @param ISBN
+     * @return index v listu, nebo -1 když není v seznamu
+     */
+    private int findRentedBookByISBN(int ISBN){
+        int i = 0;
+        for(RentedBook b : rentedBooks){
+           if(b.getISBN() == ISBN){
+               return i;
+           }
+           i++;
+        }
+        return -1;
     }
     
     /**
@@ -104,14 +174,18 @@ public class BookInventory {
     public static void main(String[] args) throws ParseException, IOException{
         BookInventory bi = new BookInventory();
         try{
-            bi.loadData("data/BooksInventorynew.txt");
+            bi.loadData("data/BooksInventory.txt");
         }catch(IOException e){
             System.out.println("soubor neexistuje");
         }
         System.out.println(bi.toString());
-//        bi.addBook(new Book("Petr", "Petr", 789, "12/5/188"));
-//        System.out.println(bi.toString());
-//        bi.saveData("data/BooksInventorynew.dat");
+        bi.addBook(new Book("Petr", "Petr", 789, "12/5/188"));
+        bi.addBook(new Book("FD","F",789789,"12/1/1597"));
+        System.out.println("bi\n"+bi.toString());
+        bi.saveData("data/BooksInventorynew.dat");
+        BookInventory bitch = new BookInventory();
+        bitch.loadData("data/BooksInventorynew.dat");
+        System.out.println("Bitch\n"+bi.toString());
     }
 
     

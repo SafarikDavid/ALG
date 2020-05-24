@@ -29,6 +29,8 @@ public class BinaryWriterBook extends Writer{
                 sb.append(b.getISBN());
                 sb.append(" & ");
                 sb.append(b.getPublishDateString());
+                sb.append(" & ");
+                sb.append(b.isIsRented());
                 sb.append("\n");
                 outFile.writeUTF(sb.toString());
             }
