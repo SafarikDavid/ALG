@@ -49,6 +49,21 @@ public class ClientsList {
     }
     
     /**
+     * Pokud je klient registrovaný, tak přidá knihu do seznamu vypůjčených.
+     * @param ID ID klienta
+     * @param book RentedBook
+     * @return True, pokud byla kniha úspěšně přidána; False, pokud klient není registrovaný
+     */
+    public boolean rentBook(int ID, RentedBook book){
+        int i = findClientByID(ID);
+        if(i > 0){
+            clients.get(i).rentBook(book);
+            return true;
+        }
+        return false;
+    }
+    
+    /**
      * Přidá klienta do seznamu.
      * @param client Client class instance
      */
@@ -84,6 +99,14 @@ public class ClientsList {
             i++;
         }
         return -1;
+    }
+    
+    public boolean isIDRegistered(int ID){
+        
+    }
+    
+    public ArrayList<Client> getClientList(){
+        return clients;
     }
     
     @Override

@@ -68,9 +68,8 @@ public class BookInventory {
      * Vypůjčí knihu. Změní stav knihy na vypůjčeno.
      * @param ISBN
      * @return True, pokud je kniha v inventáři; False, pokud se nepodařilo knihu najít
-     * @throws ParseException Špatný formát data
      */
-    public boolean rentOutBook(int ISBN) throws ParseException{
+    public boolean rentOutBook(int ISBN){
         int i = findBookByISBN(ISBN);
         if(i >= 0){
             books.get(i).setIsRented(true);
@@ -128,6 +127,22 @@ public class BookInventory {
      */
     public void sortByPublishDate(){
         Collections.sort(books, new BookComparatorByPublishDate());
+    }
+    
+    public ArrayList<Book> getBooksList(){
+        return books;
+    }
+    
+    /**
+     * Najde a vrátí knihu v seznamu podle ISBN.
+     * @param ISBN ISBN knihy
+     * @return Book podle ISBN; Null, pokud se nepodaří knihu nalézt v seznamu
+     */
+    public Book getBookByISBN(int ISBN){
+        if(findBookByISBN(ISBN) >= 0){
+            return books.get(findBookByISBN(ISBN));
+        }
+        return null;
     }
 
     @Override
