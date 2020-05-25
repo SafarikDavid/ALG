@@ -1,4 +1,0 @@
-Petr & Petr & 789 & 12/05/0188 & false
-FD & F & 789789 & 12/01/1597 & false
-Petr & Petr & 789 & 12/05/0188 & false
-FD & F & 789789 & 12/01/1597 & false

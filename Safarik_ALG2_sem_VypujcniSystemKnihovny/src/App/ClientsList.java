@@ -1,7 +1,13 @@
 package App;
 
+import filehandlingclients.BinaryReaderClient;
+import filehandlingclients.BinaryWriterClient;
+import filehandlingclients.TextReaderClient;
+import filehandlingclients.TextWriterClient;
+import filehandlingclients.Writer;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -18,12 +24,28 @@ public class ClientsList {
         this.clients = clients;
     }
     
-    public void loadData(String path) {
-        
+    public void loadData(String path) throws IOException {
+        if(path.endsWith(".txt")){
+            clients = new TextReaderClient().load(path);
+        }else if(path.endsWith(".dat")){
+            clients = new BinaryReaderClient().load(path);
+        }else{
+            throw new IllegalArgumentException("Nepodporovaná koncovka souboru.");
+        }
     }
     
-    public void saveData(String path){
-        
+    public void saveData(String path) throws IOException{
+        Writer w;
+        if(path.endsWith(".txt")){
+            w = new TextWriterClient();
+        }else if(path.endsWith(".dat")){
+            w = new BinaryWriterClient();
+        }else{
+            throw new IllegalArgumentException("Nepodporovaná koncovka souboru.");
+        }
+        File out = new File(path);
+        out.delete();
+        w.save(path, clients);
     }
     
     /**
@@ -37,13 +59,15 @@ public class ClientsList {
     /**
      * Odstraní klienta ze seznamu.
      * @param ID číslo přidělené klientovi
+     * @return true, pokud se podařilo odstranit klienta ze seznamu, jinak false
      */
-    public void removeClient(int ID){
-        for(Client c : clients){
-            if(c.getID() == ID){
-                clients.remove(c);
-            }
+    public boolean removeClient(int ID){
+        int i = findClientByID(ID);
+        if(i >= 0){
+            clients.remove(i);
+            return true;
         }
+        return false;
     }
     
     /**
@@ -61,7 +85,7 @@ public class ClientsList {
         }
         return -1;
     }
-
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,12 +95,14 @@ public class ClientsList {
         return sb.toString();
     }
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         ClientsList cl = new ClientsList();
-        cl.addClient(new Client("Pavel","Vorisek",32));
-        Date da = new Date(345,543,543);
-        cl.addClient(new Client("Ahoj", "Jak", 32));
+        cl.loadData("data/ClientsList.txt");
         System.out.println(cl.toString());
+        cl.saveData("data/ClientsListCopy.txt");
+        cl.saveData("data/ClientsListCopy.dat");
+        cl.loadData("data/ClientsListCopy.dat");
+        System.out.println("Ahooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n"+cl.toString());
     }
     
 }

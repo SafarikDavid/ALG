@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingbookinventory;
 
 import App.Book;
 import java.io.BufferedInputStream;
@@ -29,7 +29,7 @@ public class BinaryReaderBook extends Reader{
         try(DataInputStream dis = new DataInputStream(new FileInputStream(new File(path)))){
             while(dis.available() > 0){
                 String k = dis.readUTF();
-                String[] parts = k.split("[ ]*&[ ]*");
+                String[] parts = k.split("[ ]*%[ ]*");
                 boolean part4 = false;
                 if(parts[4].equalsIgnoreCase("true")){
                     part4 = true;

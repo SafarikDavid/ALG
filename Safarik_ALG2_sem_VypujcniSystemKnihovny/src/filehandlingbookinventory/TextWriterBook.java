@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingbookinventory;
 
 import App.Book;
 import java.io.BufferedWriter;
@@ -24,13 +24,13 @@ public class TextWriterBook extends Writer{
         try(PrintWriter outFile = new PrintWriter(new BufferedWriter(new FileWriter(new File(path), true)))){
             for (Book b : books) {
                 outFile.print(b.getName());
-                outFile.print(" & ");
+                outFile.print(" % ");
                 outFile.print(b.getAuthorName());
-                outFile.print(" & ");
+                outFile.print(" % ");
                 outFile.print(b.getISBN());
-                outFile.print(" & ");
+                outFile.print(" % ");
                 outFile.print(b.getPublishDateString());
-                outFile.print(" & ");
+                outFile.print(" % ");
                 outFile.println(b.isIsRented());
             }
         }

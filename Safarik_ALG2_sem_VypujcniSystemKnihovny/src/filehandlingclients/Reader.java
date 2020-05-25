@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingclients;
 
-import App.Book;
+import App.Client;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,5 +14,7 @@ import java.util.ArrayList;
  * @author David
  */
 public abstract class Reader {
-    public abstract ArrayList<Book> load(String path) throws IOException;
+    
+    public abstract ArrayList<Client> load(String path) throws IOException;
+    
 }

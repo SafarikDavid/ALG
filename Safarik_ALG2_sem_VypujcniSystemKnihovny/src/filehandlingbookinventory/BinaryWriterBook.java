@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingbookinventory;
 
 import App.Book;
 import java.io.DataOutputStream;
@@ -23,13 +23,13 @@ public class BinaryWriterBook extends Writer{
             for (Book b : books) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(b.getName());
-                sb.append(" & ");
+                sb.append(" % ");
                 sb.append(b.getAuthorName());
-                sb.append(" & ");
+                sb.append(" % ");
                 sb.append(b.getISBN());
-                sb.append(" & ");
+                sb.append(" % ");
                 sb.append(b.getPublishDateString());
-                sb.append(" & ");
+                sb.append(" % ");
                 sb.append(b.isIsRented());
                 sb.append("\n");
                 outFile.writeUTF(sb.toString());

@@ -1,18 +1,16 @@
 package App;
 
-import filehandling.BinaryWriterBook;
-import filehandling.TextReaderBook;
-import filehandling.TextWriterBook;
-import filehandling.Writer;
+import filehandlingbookinventory.BinaryWriterBook;
+import filehandlingbookinventory.TextReaderBook;
+import filehandlingbookinventory.TextWriterBook;
+import filehandlingbookinventory.Writer;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import comparing.*;
-import filehandling.BinaryReaderBook;
-import java.time.LocalDate;
-import java.util.Date;
+import filehandlingbookinventory.BinaryReaderBook;
 
 /**
  *
@@ -20,15 +18,10 @@ import java.util.Date;
  */
 public class BookInventory {
     private ArrayList<Book> books = new ArrayList<>();
-    private ArrayList<RentedBook> rentedBooks = new ArrayList<>();
 
     public BookInventory() {
     }
     
-    public BookInventory(ArrayList<Book> books) {
-        this.books = books;
-    }
-
     /**
      * Načte data o inventáři ze souboru.
      * @param path cesta k souboru
@@ -64,7 +57,7 @@ public class BookInventory {
     }
     
     /**
-     * Přidá knihu do inventáře.
+     * Přidá novou knihu do inventáře.
      * @param book instance Book class
      */
     public void addBook(Book book) {
@@ -72,7 +65,7 @@ public class BookInventory {
     }
     
     /**
-     * Vypůjčí knihu. Změní stav knihy na vypůjčeno a přidá knihu do seznamu vypůjčených.
+     * Vypůjčí knihu. Změní stav knihy na vypůjčeno.
      * @param ISBN
      * @return True, pokud je kniha v inventáři; False, pokud se nepodařilo knihu najít
      * @throws ParseException Špatný formát data
@@ -81,30 +74,21 @@ public class BookInventory {
         int i = findBookByISBN(ISBN);
         if(i >= 0){
             books.get(i).setIsRented(true);
-            Book b = books.get(i);
-            LocalDate today = LocalDate.now();
-            String dateToday = today.getYear() + "/" + today.getMonthValue() + "/" + today.getDayOfMonth();
-            rentedBooks.add(new RentedBook(b.getName(), b.getAuthorName(), b.getISBN(), b.getPublishDateString(), dateToday));
             return true;
         }
         return false;
     }
     
     /**
-     * Vrátí knihu. Smaže jí ze seznamu vypůjčených a změní stav knihy v inventáři na nevypůjčeno.
+     * Vrátí knihu. Změní stav knihy v inventáři na nevypůjčeno.
      * @param ISBN
-     * @return pokud nebude nalezena kniha s daným ISBN ve kterémkoliv seznamu, vrátí false, jinak true
+     * @return pokud nebude nalezena kniha s daným ISBN v seznamu, vrátí false, jinak true
      */
     public boolean returnBook(int ISBN){
-        int i = findRentedBookByISBN(ISBN);
+        int i = findBookByISBN(ISBN);
         if(i >= 0){
-            rentedBooks.remove(i);
-            i = findBookByISBN(ISBN);
-            if(i >= 0){
-                books.get(i).setIsRented(false);
-                return true;
-            }
-            return false;
+            books.get(i).setIsRented(false);
+            return true;
         }
         return false;
     }
@@ -117,22 +101,6 @@ public class BookInventory {
     private int findBookByISBN(int ISBN){
         int i = 0;
         for(Book b : books){
-           if(b.getISBN() == ISBN){
-               return i;
-           }
-           i++;
-        }
-        return -1;
-    }
-    
-    /**
-     * Najde vypůjčenou knihu podle ISBN hodnoty, vrátí její index v listu.
-     * @param ISBN
-     * @return index v listu, nebo -1 když není v seznamu
-     */
-    private int findRentedBookByISBN(int ISBN){
-        int i = 0;
-        for(RentedBook b : rentedBooks){
            if(b.getISBN() == ISBN){
                return i;
            }

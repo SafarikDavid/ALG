@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingbookinventory;
 
 import App.Book;
 import java.io.IOException;

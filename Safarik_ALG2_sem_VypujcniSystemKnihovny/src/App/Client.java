@@ -1,5 +1,6 @@
 package App;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ public class Client {
     private String lastName;
     private int ID;
     private String email;
-    private ArrayList<Integer> rentedBooks;
+    private ArrayList<RentedBook> rentedBooks;
 
     public Client(String firstName, String lastName, int ID, String email) {
         this.firstName = firstName;
@@ -22,7 +23,7 @@ public class Client {
         rentedBooks = new ArrayList<>();
     }
 
-    public Client(String firstName, String lastName, int ID, String email, ArrayList<Integer> rentedBooks) {
+    public Client(String firstName, String lastName, int ID, String email, ArrayList<RentedBook> rentedBooks) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ID = ID;
@@ -31,24 +32,41 @@ public class Client {
     }
     
     /**
-     * Přidá ISBN vypůjčené knihy do seznamu vypůjčených knih klienta.
-     * @param ISBN ISBN vypůjčené knihy
+     * Přidá knihu do seznamu vypůjčených knih klienta.
+     * @param book
      */
-    public void rentBook(int ISBN){
-        rentedBooks.add(ISBN);
+    public void rentBook(RentedBook book){
+        rentedBooks.add(book);
     }
     
     /**
-     * Vrátí knihu podle zadaného ISBN. Smaže zadané ISBN ze seznamu vypůjčených knih klienta.
+     * Vrátí knihu se zadaným ISBN. Smaže ze seznamu půjčených knih.
      * @param ISBN 
+     * @return True, pokud byla kniha úspěšně nalezena a smazána, jinak False
      */
-    public void returnBook(int ISBN){
-        for(Integer i : rentedBooks){
-            if(i.equals(ISBN)){
-                rentedBooks.remove(i);
-                return;
-            }
+    public boolean returnBook(int ISBN){
+        int i = findRentedBookByISBN(ISBN);
+        if(i >= 0){
+            rentedBooks.remove(i);
+            return true;
         }
+        return false;
+    }
+    
+    /**
+     * Najde index knihy podle ISBN.
+     * @param ISBN ISBN knihy
+     * @return -1 pokud kniha nenalezena, jinak index v seznamu
+     */
+    private int findRentedBookByISBN(int ISBN){
+        int i = 0;
+        for(RentedBook b : rentedBooks){
+            if(b.getISBN() == ISBN){
+                return i;
+            }
+            i++;
+        }
+        return -1;
     }
 
     public String getFirstName() {
@@ -67,31 +85,25 @@ public class Client {
         return email;
     }
     
-    public ArrayList<Integer> getRentedBooks() {
+    public ArrayList<RentedBook> getRentedBooks() {
         return rentedBooks;
-    }
-    
-    public String getRentedBooksString(){
-        StringBuilder sb = new StringBuilder();
-        for(Integer i : rentedBooks){
-            sb.append(i).append(" ");
-        }
-        return sb.toString();
     }
     
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(firstName).append(" ").append(lastName).append(" ").append(ID).append(" ").append(email).append("\n");
-        sb.append(this.getRentedBooksString());
-        sb.append(";");
+        for (RentedBook rentedBook : rentedBooks) {
+            sb.append(rentedBook).append("\n");
+        }
         return sb.toString();
     }
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParseException{
         Client cus = new Client("Petr", "Orisek", 1, "fds@fds.com");
-//        cus.rentBook(new Book("Kaer","JDF",4897645, new Date(1958, 5, 15)));
-        System.out.println(cus.getRentedBooks());
+        cus.rentBook(new RentedBook("Kaer","JDF",4897645, "12/5/1999", "20/4/2020"));
+        System.out.println(cus.toString());
+        cus.returnBook(4897645);
         System.out.println(cus.toString());
     }
     

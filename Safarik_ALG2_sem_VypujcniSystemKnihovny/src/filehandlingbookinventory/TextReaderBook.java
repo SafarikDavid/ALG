@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandling;
+package filehandlingbookinventory;
 
 import App.Book;
 import java.io.BufferedReader;
@@ -30,7 +30,7 @@ public class TextReaderBook extends Reader{
             bookInv = new BufferedReader(new FileReader(pathToFile));
             String line;
             while((line = bookInv.readLine()) != null){
-                String[] parts = line.split("[ ]*&[ ]*");
+                String[] parts = line.split("[ ]*%[ ]*");
                 try{
                     boolean part4 = false;
                     if(parts[4].equalsIgnoreCase("true")){

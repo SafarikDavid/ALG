@@ -21,6 +21,14 @@ public class RentedBook extends Book{
         this.rentDate = rentDate;
     }
 
+    public Date getRentDate() {
+        return rentDate;
+    }
+    
+    public String getRentDateString(){
+        return SDF.format(rentDate);
+    }
+    
     @Override
     public String toString() {
         return super.toString() + " " + SDF.format(rentDate);
