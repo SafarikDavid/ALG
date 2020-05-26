@@ -14,12 +14,12 @@ import java.util.Date;
 public class Book {
     private String name;
     private String authorName;
-    private int ISBN;
+    private long ISBN;
     private Date publishDate;
     protected final static SimpleDateFormat SDF = new SimpleDateFormat("dd/MM/yyyy");
     private boolean isRented;
 
-    public Book(String name, String authorName, int ISBN, String publishDate) throws ParseException {
+    public Book(String name, String authorName, long ISBN, String publishDate) throws ParseException {
         this.name = name;
         this.authorName = authorName;
         this.ISBN = ISBN;
@@ -27,7 +27,7 @@ public class Book {
         this.isRented = false;
     }
     
-    public Book(String name, String authorName, int ISBN, Date publishDate) {
+    public Book(String name, String authorName, long ISBN, Date publishDate) {
         this.name = name;
         this.authorName = authorName;
         this.ISBN = ISBN;
@@ -35,7 +35,7 @@ public class Book {
         this.isRented = false;
     }
 
-    public Book(String name, String authorName, int ISBN, String publishDate, boolean isRented) throws ParseException {
+    public Book(String name, String authorName, long ISBN, String publishDate, boolean isRented) throws ParseException {
         this.name = name;
         this.authorName = authorName;
         this.ISBN = ISBN;
@@ -43,7 +43,7 @@ public class Book {
         this.isRented = isRented;
     }
 
-    public Book(String name, String authorName, int ISBN, Date publishDate, boolean isRented) {
+    public Book(String name, String authorName, long ISBN, Date publishDate, boolean isRented) {
         this.name = name;
         this.authorName = authorName;
         this.ISBN = ISBN;
@@ -59,7 +59,7 @@ public class Book {
         return authorName;
     }
 
-    public int getISBN() {
+    public long getISBN() {
         return ISBN;
     }
 

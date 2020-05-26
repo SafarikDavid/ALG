@@ -11,12 +11,12 @@ import java.util.Date;
 public class RentedBook extends Book{
     private Date rentDate;
     
-    public RentedBook(String name, String authorName, int ISBN, String publishDate, String rentDate) throws ParseException {
+    public RentedBook(String name, String authorName, long ISBN, String publishDate, String rentDate) throws ParseException {
         super(name, authorName, ISBN, publishDate, true);
         this.rentDate = SDF.parse(rentDate);
     }
     
-    public RentedBook(String name, String authorName, int ISBN, Date publishDate, Date rentDate) {
+    public RentedBook(String name, String authorName, long ISBN, Date publishDate, Date rentDate) {
         super(name, authorName, ISBN, publishDate, true);
         this.rentDate = rentDate;
     }

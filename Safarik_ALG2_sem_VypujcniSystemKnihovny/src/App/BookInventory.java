@@ -67,13 +67,15 @@ public class BookInventory {
     /**
      * Vypůjčí knihu. Změní stav knihy na vypůjčeno.
      * @param ISBN
-     * @return True, pokud je kniha v inventáři; False, pokud se nepodařilo knihu najít
+     * @return True, pokud je kniha v inventáři; False, pokud se nepodařilo knihu najít nebo je již vypůjčena
      */
-    public boolean rentOutBook(int ISBN){
+    public boolean rentOutBook(long ISBN){
         int i = findBookByISBN(ISBN);
         if(i >= 0){
-            books.get(i).setIsRented(true);
-            return true;
+            if(!books.get(i).isIsRented()){
+                books.get(i).setIsRented(true);
+                return true;
+            }
         }
         return false;
     }
@@ -83,7 +85,7 @@ public class BookInventory {
      * @param ISBN
      * @return pokud nebude nalezena kniha s daným ISBN v seznamu, vrátí false, jinak true
      */
-    public boolean returnBook(int ISBN){
+    public boolean returnBook(long ISBN){
         int i = findBookByISBN(ISBN);
         if(i >= 0){
             books.get(i).setIsRented(false);
@@ -97,7 +99,7 @@ public class BookInventory {
      * @param ISBN
      * @return index v listu, nebo -1 když neni v seznamu
      */
-    private int findBookByISBN(int ISBN){
+    private int findBookByISBN(long ISBN){
         int i = 0;
         for(Book b : books){
            if(b.getISBN() == ISBN){
@@ -138,7 +140,7 @@ public class BookInventory {
      * @param ISBN ISBN knihy
      * @return Book podle ISBN; Null, pokud se nepodaří knihu nalézt v seznamu
      */
-    public Book getBookByISBN(int ISBN){
+    public Book getBookByISBN(long ISBN){
         if(findBookByISBN(ISBN) >= 0){
             return books.get(findBookByISBN(ISBN));
         }

@@ -38,7 +38,7 @@ public class BinaryReaderClient extends Reader{
                 for (int i = 1; i < wholeClientParts.length - 1; i++) {
                     String[] bookParts = wholeClientParts[i].split("[ ]*%[ ]*");
                     try {
-                        tempClient.rentBook(new RentedBook(bookParts[0], bookParts[1], Integer.parseInt(bookParts[2]), bookParts[3], bookParts[4]));
+                        tempClient.rentBook(new RentedBook(bookParts[0], bookParts[1], Long.parseLong(bookParts[2]), bookParts[3], bookParts[4]));
                     } catch (ParseException ex) {
                         throw new IllegalArgumentException("Wrong date format.");
                     }

@@ -34,7 +34,7 @@ public class TextReaderClient extends Reader{
                 while(!(bookLine = clientsListReader.readLine()).contains(";")){
                     String[] bookParts = bookLine.split("[ ]*%[ ]*");
                     try {
-                        tempClient.rentBook(new RentedBook(bookParts[0], bookParts[1], Integer.parseInt(bookParts[2]), bookParts[3], bookParts[4]));
+                        tempClient.rentBook(new RentedBook(bookParts[0], bookParts[1], Long.parseLong(bookParts[2]), bookParts[3], bookParts[4]));
                     } catch (ParseException ex) {
                         System.out.println("Špatný formát data.");
                     }

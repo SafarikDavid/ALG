@@ -36,7 +36,7 @@ public class TextReaderBook extends Reader{
                     if(parts[4].equalsIgnoreCase("true")){
                         part4 = true;
                     }
-                    books.add(new Book(parts[0], parts[1], Integer.parseInt(parts[2]), parts[3], part4));
+                    books.add(new Book(parts[0], parts[1], Long.parseLong(parts[2]), parts[3], part4));
                 }catch(NoSuchElementException e){
                     if(bookInv != null) bookInv.close();
                 } catch (ParseException ex) {

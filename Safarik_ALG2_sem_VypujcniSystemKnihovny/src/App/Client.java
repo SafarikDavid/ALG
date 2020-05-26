@@ -41,10 +41,10 @@ public class Client {
     
     /**
      * Vrátí knihu se zadaným ISBN. Smaže ze seznamu půjčených knih.
-     * @param ISBN 
-     * @return True, pokud byla kniha úspěšně nalezena a smazána, jinak False
+     * @param ISBN ISBN hledane knihy
+     * @return True, pokud byla kniha úspěšně nalezena a smazána; pokud neni kniha se zadaným ISBN v seznamu, tak False
      */
-    public boolean returnBook(int ISBN){
+    public boolean returnBook(long ISBN){
         int i = findRentedBookByISBN(ISBN);
         if(i >= 0){
             rentedBooks.remove(i);
@@ -58,7 +58,7 @@ public class Client {
      * @param ISBN ISBN knihy
      * @return -1 pokud kniha nenalezena, jinak index v seznamu
      */
-    private int findRentedBookByISBN(int ISBN){
+    private int findRentedBookByISBN(long ISBN){
         int i = 0;
         for(RentedBook b : rentedBooks){
             if(b.getISBN() == ISBN){

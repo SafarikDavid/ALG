@@ -35,7 +35,7 @@ public class BinaryReaderBook extends Reader{
                     part4 = true;
                 }
                 try {
-                    Book b = new Book(parts[0], parts[1], Integer.parseInt(parts[2]), parts[3], part4);
+                    Book b = new Book(parts[0], parts[1], Long.parseLong(parts[2]), parts[3], part4);
                 } catch (ParseException ex) {
                     System.out.println("Chyba formátu data.");
                 }

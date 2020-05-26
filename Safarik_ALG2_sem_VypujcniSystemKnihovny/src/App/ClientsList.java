@@ -1,5 +1,7 @@
 package App;
 
+import comparing.ClientComparatorByID;
+import comparing.ClientComparatorByLastname;
 import filehandlingclients.BinaryReaderClient;
 import filehandlingclients.BinaryWriterClient;
 import filehandlingclients.TextReaderClient;
@@ -8,6 +10,7 @@ import filehandlingclients.Writer;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -64,6 +67,20 @@ public class ClientsList {
     }
     
     /**
+     * Vrátí knihu podle zadaného ISBN.
+     * @param ID ID klienta
+     * @param ISBN ISBN hledané knihy
+     * @return False, pokud klient neni v seznamu, nebo pokud kniha není v seznamu klienta, jinak true
+     */
+    public boolean returnBook(int ID, long ISBN){
+        int i = findClientByID(ID);
+        if(i >= 0){
+            return clients.get(i).returnBook(ISBN);
+        }
+        return false;
+    }
+    
+    /**
      * Přidá klienta do seznamu.
      * @param client Client class instance
      */
@@ -87,7 +104,7 @@ public class ClientsList {
     
     /**
      * Najde klienta podle čísla ID. Vrátí index v seznamu klientů.
-     * @param ID
+     * @param ID ID klienta v seznamu
      * @return -1 pokud nenalezen, jinak index v seznamu klientů
      */
     private int findClientByID(int ID){
@@ -101,12 +118,26 @@ public class ClientsList {
         return -1;
     }
     
+    /**
+     * Zkontroluje, zda je klient se zadaným ID registrován.
+     * @param ID ID klienta
+     * @return true, pokud je ID v seznamu, jinak false
+     */
     public boolean isIDRegistered(int ID){
-        
+        int i = findClientByID(ID);
+        return i >= 0;
     }
     
     public ArrayList<Client> getClientList(){
         return clients;
+    }
+    
+    public void sortByLastName(){
+        Collections.sort(clients, new ClientComparatorByLastname());
+    }
+    
+    public void sortByID(){
+        Collections.sort(clients, new ClientComparatorByID());
     }
     
     @Override
