@@ -138,6 +138,10 @@ public class MainApp {
     public void sortClientsListByID(){
         clients.sortByID();
     }
+    
+    public ClientsList getClientsList(){
+        return clients;
+    }
 
     /**
      * Formátovaný výstup s informacemi o knihovně.

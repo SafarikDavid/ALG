@@ -1,3 +1,5 @@
+1 1 70 1
+;
 146 1465 67 1647786
 ;
 2 5 68 1
@@ -8,13 +10,12 @@ Pavel Odvarka 25 pavel.odvarka@seznam.cz
 ;
 Kiril PD 48 kPel21@gmail.com
 ;
+Petr Pavel 71 45967@fds.cpom
+ahoj % sarg rGErG RAG % 132 % 05/10/0099 % 09/11/0032
+;
 Pavel Petr 66 honza@gmail.com
 ;
 Karel Vojtek 65 ks@gmail.com
-;
-1 1 70 1
-;
-Petr Pavel 71 45967@fds.cpom
 ;
 hon fd 72 f
 ;

@@ -5,12 +5,15 @@ import App.BookInventory;
 import App.Client;
 import App.ClientsList;
 import App.MainApp;
+import App.RentedBook;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Utils.MailSender;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -103,16 +106,16 @@ public class Main {
                             choiceInner = checkInteger();
                             switch(choiceInner){
                                 //registruj klienta 
-                                case 1:
+                                case 4:
                                     Client klient = makeNewClient(app.getNewClientID());
                                     app.addNewClientToList(klient);
                                     break;
                                 //vypiš registrované klienty
-                                case 2:
+                                case 1:
                                     System.out.println(app.getClientsListInfo());
                                     break;
-                                //posli email o stavu vypujcenych knih
-                                case 3:
+                                //posli email o nevrácených knihách
+                                case 5:
                                     System.out.println("Zadejte heslo:");
                                     String pass = sc.nextLine();
                                     {
@@ -125,14 +128,15 @@ public class Main {
                                     }
                                     break;
                                 //setrid podle prijmeni
-                                case 4:
+                                case 2:
                                     app.sortClientsListByLastName();
                                     System.out.println(app.getClientsListInfo());
                                     break;
                                 //setrid podle id
-                                case 5:
+                                case 3:
                                     app.sortClientsListByID();
                                     System.out.println(app.getClientsListInfo());
+                                    break;
                                 //návrat
                                 case 0:
                                     System.out.println("Vracím se do hlavní nabídky.");
@@ -242,44 +246,51 @@ public class Main {
      * @return 
      */
     private static String getMainMenu() {
-        return "1: Knihovní inventář\n"
+        return "-----------------------\n"
+                + "1: Knihovní inventář\n"
                 + "2: Klienti\n"
                 + "3: Výpůjčky\n"
-                + "0: Ukončit program";
+                + "0: Ukončit program\n"
+                + "-----------------------";
     }
     
     private static String getRentMenu() {
-        return "1: Vypůjčit knihu\n"
+        return "---------------------------\n"
+                + "1: Vypůjčit knihu\n"
                 + "2: Vrátit knihu\n"
-                + "0: Návrat do hlavního menu";
+                + "0: Návrat do hlavního menu\n"
+                + "---------------------------";
     }
 
     private static String getClientMenu() {
-        return "1: Registruj klienta\n"
-                + "2: Vypiš registrované klienty\n"
-                + "3: Email\n"
-                + "4: Setříď seznam podle příjmení a vypiš\n"
-                + "5: Setříď seznam podle ID a vypiš\n"
-                + "0: Návrat do hlavního menu";
+        return "-----------------------------------------\n"
+                + "1: Vypiš registrované klienty\n"
+                + "2: Setříď seznam podle příjmení a vypiš\n"
+                + "3: Setříď seznam podle ID a vypiš\n"
+                + "4: Registruj klienta\n"
+                + "5: Email\n"
+                + "0: Návrat do hlavního menu\n"
+                + "-----------------------------------------";
         
     }
 
     private static String getBookInventoryMenu() {
-        return "1: Vypiš všechny knihy\n"
+        return "-------------------------------------------\n"
+                + "1: Vypiš všechny knihy\n"
                 + "2: Seřaď knihy podle názvu a vypiš\n"
                 + "3: Seřaď knihy podle jména autora a vypiš\n"
                 + "4: Seřaď knihy podle data vydání a vypiš\n"
                 + "5: Přidej knihu do inventáře\n"
-                + "0: Návrat do hlavního menu";
+                + "0: Návrat do hlavního menu\n"
+                + "-------------------------------------------";
     }
-
+    
     /**
      * Cyklus pro načtení integer. Až po úspěšném načtení integer vrací načtenou hodnotu.
      * @return načtenou hodnotu integer
      */
     private static int checkInteger(){
         do{
-            System.out.println("Zadejte celé číslo: ");
             String integer = sc.nextLine();
             try{
                 return Integer.parseInt(integer);
@@ -311,7 +322,6 @@ public class Main {
      */
     private static long checkLong(){
         do{
-            System.out.println("Zadejte celé číslo: ");
             String longInteger = sc.nextLine();
             try{
                 return Long.parseLong(longInteger);
