@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingclients;
+package filehandling;
 
 import App.Client;
 import App.RentedBook;
@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author David
  */
-public class TextWriterClient extends Writer{
+public class TextWriterClient extends WriterClient{
 
     @Override
     public void save(String path, List<Client> clientsList) throws IOException {

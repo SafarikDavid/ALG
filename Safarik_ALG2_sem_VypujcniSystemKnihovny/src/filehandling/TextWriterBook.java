@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingbookinventory;
+package filehandling;
 
 import App.Book;
 import java.io.BufferedWriter;
@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author David
  */
-public class TextWriterBook extends Writer{
+public class TextWriterBook extends WriterBook{
 
     @Override
     public void save(String path, List<Book> books) throws IOException {

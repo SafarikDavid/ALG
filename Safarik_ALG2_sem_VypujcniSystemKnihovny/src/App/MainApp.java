@@ -1,5 +1,6 @@
 package App;
 
+import Utils.MailSender;
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -117,6 +118,19 @@ public class MainApp {
             return 2;
         }
         return 1;
+    }
+    
+    /**
+     * Metoda k posílání emailu.
+     * @param to Komu
+     * @param from Z jaké adresy
+     * @param pass Heslo
+     * @param subject Předmět zprávy
+     * @param text Text zprávy
+     * @throws Exception Pokud nastane jakákoliv chyba při posílání emailu
+     */
+    public void sendMail(String to, String from, String pass, String subject, String text) throws Exception{
+        MailSender.sendMail(to, from, pass, subject, text);
     }
     
     public void sortInventoryByNameOfBook(){

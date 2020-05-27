@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingbookinventory;
+package filehandling;
 
 import App.Book;
 import java.io.BufferedReader;
@@ -19,7 +19,7 @@ import java.util.NoSuchElementException;
  *
  * @author David
  */
-public class TextReaderBook extends Reader{
+public class TextReaderBook extends ReaderBook{
 
     @Override
     public ArrayList<Book> load(String path) throws IOException {

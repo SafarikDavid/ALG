@@ -120,7 +120,7 @@ public class Main {
                                     String pass = sc.nextLine();
                                     {
                                         try {
-                                            MailSender.sendMail("programmailtesterknihovna@gmail.com", "programmailtesterknihovna@gmail.com", pass, "Knihovna", "Vrat knihy.");
+                                            app.sendMail("programmailtesterknihovna@gmail.com", "programmailtesterknihovna@gmail.com", pass, "Knihovna", "Vrat knihy.");
                                             System.out.println("Povedlo se.");
                                         } catch (Exception ex) {
                                             System.out.println("Nastala chyba.");

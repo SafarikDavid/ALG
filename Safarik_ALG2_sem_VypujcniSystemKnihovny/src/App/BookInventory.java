@@ -1,16 +1,16 @@
 package App;
 
-import filehandlingbookinventory.BinaryWriterBook;
-import filehandlingbookinventory.TextReaderBook;
-import filehandlingbookinventory.TextWriterBook;
-import filehandlingbookinventory.Writer;
+import filehandling.BinaryWriterBook;
+import filehandling.TextReaderBook;
+import filehandling.TextWriterBook;
+import filehandling.WriterBook;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import comparing.*;
-import filehandlingbookinventory.BinaryReaderBook;
+import filehandling.BinaryReaderBook;
 
 /**
  *
@@ -43,7 +43,7 @@ public class BookInventory {
      * @throws IOException 
      */
     public void saveData(String path) throws IOException{
-        Writer w;
+        WriterBook w;
         if(path.endsWith(".txt")){
             w = new TextWriterBook();
         }else if(path.endsWith(".dat")){

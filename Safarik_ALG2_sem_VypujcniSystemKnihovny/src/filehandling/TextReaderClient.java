@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingclients;
+package filehandling;
 
 import App.Client;
 import App.RentedBook;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author David
  */
-public class TextReaderClient extends Reader{
+public class TextReaderClient extends ReaderClient{
 
     @Override
     public ArrayList<Client> load(String path) throws IOException {

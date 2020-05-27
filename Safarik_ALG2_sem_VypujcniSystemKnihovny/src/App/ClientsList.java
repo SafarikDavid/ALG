@@ -2,11 +2,11 @@ package App;
 
 import comparing.ClientComparatorByID;
 import comparing.ClientComparatorByLastname;
-import filehandlingclients.BinaryReaderClient;
-import filehandlingclients.BinaryWriterClient;
-import filehandlingclients.TextReaderClient;
-import filehandlingclients.TextWriterClient;
-import filehandlingclients.Writer;
+import filehandling.BinaryReaderClient;
+import filehandling.BinaryWriterClient;
+import filehandling.TextReaderClient;
+import filehandling.TextWriterClient;
+import filehandling.WriterClient;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class ClientsList {
     }
     
     public void saveData(String path) throws IOException{
-        Writer w;
+        WriterClient w;
         if(path.endsWith(".txt")){
             w = new TextWriterClient();
         }else if(path.endsWith(".dat")){

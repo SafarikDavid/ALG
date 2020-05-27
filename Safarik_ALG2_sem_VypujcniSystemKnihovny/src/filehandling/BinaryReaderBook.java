@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingbookinventory;
+package filehandling;
 
 import App.Book;
 import java.io.BufferedInputStream;
@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author David
  */
-public class BinaryReaderBook extends Reader{
+public class BinaryReaderBook extends ReaderBook{
 
     @Override
     public ArrayList<Book> load(String path) throws IOException {
@@ -45,7 +45,7 @@ public class BinaryReaderBook extends Reader{
     }
     
     public static void main(String[] args) throws IOException{
-        Reader r = new BinaryReaderBook();
+        ReaderBook r = new BinaryReaderBook();
         ArrayList<Book> p = r.load("data/BooksInventorynew.dat");
         for(Book b : p){
             System.out.println(b.toString());

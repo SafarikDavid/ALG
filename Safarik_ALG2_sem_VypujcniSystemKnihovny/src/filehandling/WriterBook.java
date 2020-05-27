@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filehandlingclients;
+package filehandling;
 
-import App.Client;
+import App.Book;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author David
  */
-public abstract class Reader {
-    
-    public abstract ArrayList<Client> load(String path) throws IOException;
-    
+public abstract class WriterBook {
+    public abstract void save(String path, List<Book> books) throws IOException;
 }
