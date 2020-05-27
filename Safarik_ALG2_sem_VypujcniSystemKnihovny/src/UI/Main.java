@@ -1,19 +1,9 @@
 package UI;
 
-import App.Book;
-import App.BookInventory;
-import App.Client;
-import App.ClientsList;
 import App.MainApp;
-import App.RentedBook;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import Utils.MailSender;
-import java.time.LocalDate;
-import java.util.Date;
 
 /**
  *
@@ -82,11 +72,19 @@ public class Main {
                                     break;
                                 //pridej knihu do inventare
                                 case 5:
-                                    Book book = makeNewBook();
-                                    if(book != null){
-                                        app.addNewBookToInventory(book);
-                                    }else{
-                                        System.out.println("Knihu se nepodařilo přidat.");
+                                    System.out.println("Zadejte nazev knihy:");
+                                    String name = sc.nextLine();
+                                    System.out.println("Zadejte jméno autora:");
+                                    String authorName = sc.nextLine();
+                                    System.out.println("Zadejte ISBN:");
+                                    long ISBNadd = checkISBN();
+                                    System.out.println("Zadejte datum vydání knihy:");
+                                    String publishDate = checkDate();
+                                    try {
+                                        app.addNewBookToInventory(name, authorName, ISBNadd, publishDate);
+                                        System.out.println("Kniha úspěšně přidána.");
+                                    } catch (ParseException ex) {
+                                        System.out.println("Špatně zadané datum. Knihu se nepodařilo přidat.");
                                     }
                                     break;
                                 //návrat
@@ -107,8 +105,14 @@ public class Main {
                             switch(choiceInner){
                                 //registruj klienta 
                                 case 4:
-                                    Client klient = makeNewClient(app.getNewClientID());
-                                    app.addNewClientToList(klient);
+                                    System.out.println("Zadejte křestní jméno klienta:");
+                                    String firstName = sc.nextLine();
+                                    System.out.println("Zadejte příjmení klienta:");
+                                    String lastName = sc.nextLine();
+                                    System.out.println("Zadejte email:");
+                                    String email = sc.nextLine();
+                                    int ID = app.getNewClientID();
+                                    app.addNewClientToList(firstName, lastName, ID, email);
                                     break;
                                 //vypiš registrované klienty
                                 case 1:
@@ -254,6 +258,10 @@ public class Main {
                 + "-----------------------";
     }
     
+    /**
+     * Menu pro volby výpůjček.
+     * @return 
+     */
     private static String getRentMenu() {
         return "---------------------------\n"
                 + "1: Vypůjčit knihu\n"
@@ -262,6 +270,10 @@ public class Main {
                 + "---------------------------";
     }
 
+    /**
+     * Menu pro volby práce se seznamem klientů.
+     * @return 
+     */
     private static String getClientMenu() {
         return "-----------------------------------------\n"
                 + "1: Vypiš registrované klienty\n"
@@ -274,6 +286,10 @@ public class Main {
         
     }
 
+    /**
+     * Menu pro práci s inventářem.
+     * @return 
+     */
     private static String getBookInventoryMenu() {
         return "-------------------------------------------\n"
                 + "1: Vypiš všechny knihy\n"
@@ -382,44 +398,4 @@ public class Main {
         }
         return count;
     }
-    
-    /**
-     * Metoda pro vytvoření knihy pro zařazení do seznamu.
-     * @return Null, pokud se nepodaří knihu vytvořit. Book, když se podaří.
-     */
-    private static Book makeNewBook() {
-        System.out.println("Zadejte nazev knihy:");
-        String name = sc.nextLine();
-        System.out.println("Zadejte jméno autora:");
-        String authorName = sc.nextLine();
-        System.out.println("Zadejte ISBN:");
-        long ISBN;
-        while((ISBN = checkISBN()) == 0){
-            System.out.println("Špatný formát ISBN.");
-        }
-        System.out.println("Zadejte datum vydání knihy:");
-        String publishDate = checkDate();
-        try {
-            return new Book(name, authorName, ISBN, publishDate);
-        } catch (ParseException ex) {
-            System.out.println("Špatně zadané datum.");
-        }
-        return null;
-    }
-    
-    /**
-     * Vtvoří nového klienta pro zápis do seznamu.
-     * @param ID Přidělené ID klienta
-     * @return Vrací hotovou instanci třídy Client
-     */
-    private static Client makeNewClient(int ID) {
-        System.out.println("Zadejte křestní jméno klienta:");
-        String firstName = sc.nextLine();
-        System.out.println("Zadejte příjmení klienta:");
-        String lastName = sc.nextLine();
-        System.out.println("Zadejte email:");
-        String email = sc.nextLine();
-        return new Client(firstName, lastName, ID, email);
-    }
-
 }

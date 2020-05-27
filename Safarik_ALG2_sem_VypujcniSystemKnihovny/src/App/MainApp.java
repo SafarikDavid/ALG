@@ -4,7 +4,6 @@ import Utils.MailSender;
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 /**
  *
@@ -33,7 +32,7 @@ public class MainApp {
      * @throws ParseException 
      */
     public void addNewBookToInventory(String name, String authorName, long ISBN, String publishDate) throws ParseException{
-        booksInv.addBook(new Book(name, authorName, 0, publishDate));
+        booksInv.addBook(new Book(name, authorName, ISBN, publishDate));
     }
     
     /**
