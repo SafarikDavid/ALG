@@ -120,15 +120,21 @@ public class Main {
                                     break;
                                 //posli email o nevrácených knihách
                                 case 5:
-                                    System.out.println("Zadejte heslo:");
-                                    String pass = sc.nextLine();
-                                    {
-                                        try {
-                                            app.sendMail("programmailtesterknihovna@gmail.com", "programmailtesterknihovna@gmail.com", pass, "Knihovna", "Vrat knihy.");
-                                            System.out.println("Povedlo se.");
-                                        } catch (Exception ex) {
-                                            System.out.println("Nastala chyba.");
+                                    ID = checkInteger();
+                                    String recipient = app.getClientsMail(ID);
+                                    if(recipient != null){
+                                        System.out.println("Zadejte heslo:");
+                                        String pass = sc.nextLine();
+                                        {
+                                            try {
+                                                app.sendMail("programmailtesterknihovna@gmail.com", "programmailtesterknihovna@gmail.com", pass, "Knihovna", "Vrat knihy.");
+                                                System.out.println("Povedlo se.");
+                                            } catch (Exception ex) {
+                                                System.out.println("Nastala chyba.");
+                                            }
                                         }
+                                    }else{
+                                        System.out.println("Klient s daným ID neexistuje.");
                                     }
                                     break;
                                 //setrid podle prijmeni

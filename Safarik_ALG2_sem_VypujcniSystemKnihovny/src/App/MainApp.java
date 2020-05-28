@@ -167,15 +167,15 @@ public class MainApp {
      */
     public String getBookInventoryInfo(){
         StringBuilder sb = new StringBuilder();
-        sb.append("------------------------------------------------------------------------------------------------------\n");
-        sb.append(String.format("| %-15s | %-25s | %-20s | %-14s | %-12s |\n", "K vypůjčení", "Název", "Jméno autora", "ISBN", "Datum vydáni"));
-        sb.append("------------------------------------------------------------------------------------------------------\n");
+        sb.append("-----------------------------------------------------------------------------------------------------------\n");
+        sb.append(String.format("| %-15s | %-30s | %-20s | %-14s | %-12s |\n", "K vypůjčení", "Název", "Jméno autora", "ISBN", "Datum vydáni"));
+        sb.append("-----------------------------------------------------------------------------------------------------------\n");
         for(Book b : booksInv.getBooksList()){
-            String s = String.format("| %-15s | %-25s | %-20s | %-14d | %-12s |", b.isIsRented()?"Ne":"Ano", b.getName(), b.getAuthorName(), b.getISBN(), b.getPublishDateString());
+            String s = String.format("| %-15s | %-30s | %-20s | %-14d | %-12s |", b.isIsRented()?"Ne":"Ano", b.getName(), b.getAuthorName(), b.getISBN(), b.getPublishDateString());
             sb.append(s);
             sb.append("\n");
         }
-        sb.append("------------------------------------------------------------------------------------------------------\n");
+        sb.append("-----------------------------------------------------------------------------------------------------------\n");
         return sb.toString();
     }
     
@@ -192,13 +192,13 @@ public class MainApp {
             if(c.getRentedBooks().size() == 0) sb.append("\n");
             if(c.getRentedBooks().size() > 0){
                 sb.append("Vypůjčené knihy:\n");
-                sb.append("---------------------------------------------------------------------------------------\n");
-                sb.append(String.format("| %-25s | %-20s | %-14s | %-15s |\n", "Název", "Jméno autora", "ISBN", "Datum vypůjčení"));
-                sb.append("---------------------------------------------------------------------------------------\n");
+                sb.append("--------------------------------------------------------------------------------------------\n");
+                sb.append(String.format("| %-30s | %-20s | %-14s | %-15s |\n", "Název", "Jméno autora", "ISBN", "Datum vypůjčení"));
+                sb.append("--------------------------------------------------------------------------------------------\n");
                 for(RentedBook b : c.getRentedBooks()){
-                    sb.append(String.format("| %-25s | %-20s | %-14d | %-15s |\n", b.getName(), b.getAuthorName(), b.getISBN(), b.getRentDateString()));
+                    sb.append(String.format("| %-30s | %-20s | %-14d | %-15s |\n", b.getName(), b.getAuthorName(), b.getISBN(), b.getRentDateString()));
                 }
-                sb.append("---------------------------------------------------------------------------------------\n\n");
+                sb.append("--------------------------------------------------------------------------------------------\n\n");
             }
         }
         return sb.toString();
@@ -209,6 +209,20 @@ public class MainApp {
         mApp.loadAllData("data/BooksInventory.txt", "data/ClientsListCopy.txt");
         System.out.println(mApp.getBookInventoryInfo());
         System.out.println(mApp.getClientsListInfo());
+    }
+
+    /**
+     * Najde klienta podle zadaného ID a vrátí jeho email.
+     * @param ID ID klienta.
+     * @return String s emailovou adresou, nebo null, pokud není klient s daným ID
+     */
+    public String getClientsMail(int ID) {
+        for(Client c : clients.getClientList()){
+            if(c.getID() == ID){
+                return c.getEmail();
+            }
+        }
+        return null;
     }
     
 }
