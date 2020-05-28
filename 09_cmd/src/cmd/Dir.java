@@ -6,6 +6,8 @@
 package cmd;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 /**
@@ -20,6 +22,19 @@ public class Dir extends Command{
         if(params.length == 1){
             files = actualDir.listFiles();
             return dirToString(files);
+        }else if(params.length == 2){
+            if(params[1].contains("-o")){
+                files = actualDir.listFiles();
+                return order(files);
+            }
+        }else if(params.length == 3){
+            if(params[1].contains("-e")){
+                files = actualDir.listFiles();
+                return specifiedExtension(files, params[2]);
+            }else if(params[1].contains("-s")){
+                files = actualDir.listFiles();
+                return biggerThanSpecifiedSize(files, params[2]);
+            }
         }
         return null;
     }
@@ -37,8 +52,40 @@ public class Dir extends Command{
         return sb.toString();
     }
     
-//    private String order(File[] files){
-//        
-//    }
+    private String order(File[] files){
+        Arrays.sort(files);
+        return dirToString(files);
+    }
+    
+    private String specifiedExtension(File[] files, String extension){
+        StringBuilder sb = new StringBuilder("");
+        for(File file : files){
+            if(file.getName().endsWith(extension)){
+                if(file.isDirectory()){
+                    sb.append(String.format("%s%n", file.getName()));
+                }else{
+                    sb.append(String.format("%-20s%6d", file.getName(), file.length()));
+                    sb.append(new Date(file.lastModified())).append("\n");
+                }
+            }
+        }
+        return sb.toString();
+    }
+    
+    private String biggerThanSpecifiedSize(File[] files, String sizeString){
+        long size = Long.parseLong(sizeString);
+        StringBuilder sb = new StringBuilder("");
+        for(File file : files){
+            if(file.getTotalSpace() > size){
+                if(file.isDirectory()){
+                    sb.append(String.format("%s%n", file.getName()));
+                }else{
+                    sb.append(String.format("%-20s%6d", file.getName(), file.length()));
+                    sb.append(new Date(file.lastModified())).append("\n");
+                }
+            }
+        }
+        return sb.toString();
+    }
     
 }
