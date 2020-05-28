@@ -106,11 +106,11 @@ public class Main {
                                 //registruj klienta 
                                 case 4:
                                     System.out.println("Zadejte křestní jméno klienta:");
-                                    String firstName = sc.nextLine();
+                                    String firstName = checkIfStringWithoutWhiteSpace();
                                     System.out.println("Zadejte příjmení klienta:");
-                                    String lastName = sc.nextLine();
+                                    String lastName = checkIfStringWithoutWhiteSpace();
                                     System.out.println("Zadejte email:");
-                                    String email = sc.nextLine();
+                                    String email = checkIfStringWithoutWhiteSpace();
                                     int ID = app.getNewClientID();
                                     app.addNewClientToList(firstName, lastName, ID, email);
                                     break;
@@ -174,7 +174,7 @@ public class Main {
                                             System.out.println("Kniha úspěšně vypůjčena.");
                                             break;
                                         case 1:
-                                            System.out.println("Klient nebo kniha nejsou v seznamu.");
+                                            System.out.println("Klient nebo kniha nejsou v seznamu, nebo je kniha již vypůjčena.");
                                             break;
                                         case 2:
                                             System.out.println("Klient není v seznamu.");
@@ -299,6 +299,21 @@ public class Main {
                 + "5: Přidej knihu do inventáře\n"
                 + "0: Návrat do hlavního menu\n"
                 + "-------------------------------------------";
+    }
+    
+    /**
+     * Kontroluje, zda je zadaný string bez mezer.
+     * @return zadaný string
+     */
+    private static String checkIfStringWithoutWhiteSpace(){
+        do{
+            String string = sc.nextLine();
+            if(string.contains(" ")){
+                System.out.println("Nepovolená mezera.");
+            }else{
+                return string;
+            }
+        }while(true);
     }
     
     /**

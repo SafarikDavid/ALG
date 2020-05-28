@@ -1,1 +1,0 @@
-Program pro záznam výpůjček a registrovaných uživatelů.

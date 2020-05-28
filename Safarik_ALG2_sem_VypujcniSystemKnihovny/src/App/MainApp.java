@@ -51,7 +51,7 @@ public class MainApp {
      * @param email E-mail klienta
      */
     public void addNewClientToList(String firstName, String lastName, int ID, String email){
-        clients.addClient(new Client(firstName, lastName, 0, email));
+        clients.addClient(new Client(firstName, lastName, ID, email));
     }
     
     /**
@@ -87,16 +87,21 @@ public class MainApp {
         if(b == null){
             return 1;
         }
+        //zmeni stav knihy v inventari na vypujceno
+        if(!booksInv.rentOutBook(ISBN)){
+            return 1;
+        }
+        
         //zkontroluje jestli je klient v seznamu
         if(clients.isIDRegistered(clientID) == false){
             return 2;
         }
-        //zmeni stav knihy v inventari na vypujceno
-        booksInv.rentOutBook(ISBN);
+        
 
         //zjisti dnesni datum
         LocalDate today = LocalDate.now();
-        String todayString = String.format("%s/%s/%s", today.getYear(), today.getMonthValue(), today.getDayOfMonth());
+        String todayString = String.format("%s/%s/%s", today.getDayOfMonth(), today.getMonthValue(), today.getYear());
+        System.out.println(todayString);
 
         //prida knihu do klientova seznamu
         RentedBook rentedBook = new RentedBook(b.getName(), b.getAuthorName(), b.getISBN(), b.getPublishDateString(), todayString);

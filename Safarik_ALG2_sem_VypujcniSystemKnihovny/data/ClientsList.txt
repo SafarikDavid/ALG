@@ -1,23 +1,12 @@
-1 1 70 1
+Karel Filip 1 Filip.Petr@gmail.com
 ;
-146 1465 67 1647786
+Karel Ptak 2 fds@seznam.cz
 ;
-2 5 68 1
+Honza Vaclav 3 vac@gmail.com
 ;
-6 5 69 0
+Koaopes Vetr 4 vits@seznam.cz
 ;
-Karel Fojtek 0 Fojt@gmail.com
+Filip Honzik 5 daimond@gmail.com
 ;
-Pavel Odvarka 25 pavel.odvarka@seznam.cz
-;
-Kiril PD 48 kPel21@gmail.com
-;
-Petr Pavel 71 45967@fds.cpom
-ahoj % sarg rGErG RAG % 132 % 05/10/0099 % 09/11/0032
-;
-Pavel Petr 66 honza@gmail.com
-;
-Karel Vojtek 65 ks@gmail.com
-;
-hon fd 72 f
+Novej Uzivatel 6 nu@seznam.cz
 ;
