@@ -114,21 +114,48 @@ public class BookInventory {
      * Setřídí seznam knih podle názvu knihy.
      */
     public void sortByName(){
-        Collections.sort(books, new BookComparatorByName());
+        for(int i = 0; i < books.size(); i++){
+            for(int j = 1; j < books.size() - i; j++){
+                if(books.get(j-1).compareTo(books.get(j)) > 0){
+                    Book temp = books.get(j-1);
+                    books.set(j-1, books.get(j));
+                    books.set(j, temp);
+                }
+            }
+        }
+//        Collections.sort(books, new BookComparatorByName());
     }
     
     /**
      * Setřídí seznam knih podle jména autora.
      */
     public void sortByAuthorName(){
-        Collections.sort(books, new BookComparatorByAuthorName());
+        for(int i = 0; i < books.size(); i++){
+            for(int j = 1; j < books.size() - i; j++){
+                if(new BookComparatorByAuthorName().compare(books.get(j-1), books.get(j)) > 0){
+                    Book temp = books.get(j-1);
+                    books.set(j-1, books.get(j));
+                    books.set(j, temp);
+                }
+            }
+        }
+//        Collections.sort(books, new BookComparatorByAuthorName());
     }
     
     /**
      * Setřídí seznam knih podle data vydání.
      */
     public void sortByPublishDate(){
-        Collections.sort(books, new BookComparatorByPublishDate());
+        for(int i = 0; i < books.size(); i++){
+            for(int j = 1; j < books.size() - i; j++){
+                if(new BookComparatorByPublishDate().compare(books.get(j-1), books.get(j)) > 0){
+                    Book temp = books.get(j-1);
+                    books.set(j-1, books.get(j));
+                    books.set(j, temp);
+                }
+            }
+        }
+//        Collections.sort(books, new BookComparatorByPublishDate());
     }
     
     public ArrayList<Book> getBooksList(){

@@ -6,6 +6,8 @@
 ;
 6 5 69 0
 ;
+Karel Fojtek 0 Fojt@gmail.com
+;
 Pavel Odvarka 25 pavel.odvarka@seznam.cz
 ;
 Kiril PD 48 kPel21@gmail.com

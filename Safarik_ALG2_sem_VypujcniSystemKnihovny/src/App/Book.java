@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author David Šafařík
  */
-public class Book {
+public class Book implements Comparable<Book>{
     private String name;
     private String authorName;
     private long ISBN;
@@ -99,6 +99,14 @@ public class Book {
         for (Book b : ar) {
             System.out.println(b.toString());
         }
+    }
+
+    @Override
+    /**
+     * Porovnává podle názvu knihy.
+     */
+    public int compareTo(Book o) {
+        return this.getName().compareTo(o.getName());
     }
     
 }

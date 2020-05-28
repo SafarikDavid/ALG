@@ -1,7 +1,6 @@
 package App;
 
-import comparing.ClientComparatorByID;
-import comparing.ClientComparatorByLastname;
+import comparing.ClientComparatorByLastName;
 import filehandling.BinaryReaderClient;
 import filehandling.BinaryWriterClient;
 import filehandling.TextReaderClient;
@@ -10,7 +9,6 @@ import filehandling.WriterClient;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  *
@@ -132,12 +130,34 @@ public class ClientsList {
         return clients;
     }
     
+    /**
+     * Setřídí seznam podle příjmení vzestupně.
+     */
     public void sortByLastName(){
-        Collections.sort(clients, new ClientComparatorByLastname());
+        for(int i = 0; i < clients.size(); i++){
+            for(int j = 1; j < clients.size() - i; j++){
+                if(new ClientComparatorByLastName().compare(clients.get(j-1), clients.get(j)) > 0){
+                    Client temp = clients.get(j-1);
+                    clients.set(j-1, clients.get(j));
+                    clients.set(j, temp);
+                }
+            }
+        }
     }
     
+    /**
+     * Setřídí seznam podle ID vzestupně.
+     */
     public void sortByID(){
-        Collections.sort(clients, new ClientComparatorByID());
+        for(int i = 0; i < clients.size(); i++){
+            for(int j = 1; j < clients.size() - i; j++){
+                if(clients.get(j-1).compareTo(clients.get(j)) > 0){
+                    Client temp = clients.get(j-1);
+                    clients.set(j-1, clients.get(j));
+                    clients.set(j, temp);
+                }
+            }
+        }
     }
     
     @Override

@@ -8,7 +8,7 @@ import java.util.Date;
  *
  * @author David Šafařík
  */
-public class Client {
+public class Client implements Comparable<Client>{
     private String firstName;
     private String lastName;
     private int ID;
@@ -105,6 +105,14 @@ public class Client {
         System.out.println(cus.toString());
         cus.returnBook(4897645);
         System.out.println(cus.toString());
+    }
+
+    @Override
+    /**
+     * Porovnává podle ID klienta.
+     */
+    public int compareTo(Client o) {
+        return this.getID() - o.getID();
     }
     
 }
