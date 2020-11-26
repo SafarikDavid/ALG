@@ -39,7 +39,7 @@ public class TextReaderBook extends ReaderBook{
                     books.add(new Book(parts[0], parts[1], Long.parseLong(parts[2]), parts[3], part4));
                 }catch(NoSuchElementException e){
                     if(bookInv != null) bookInv.close();
-                } catch (ParseException ex) {
+                } catch (ParseException ex) { //vyhodit výš a ošetřovat výš
                     System.out.println("Nepodporovaný formát data.");
                 }
             }

@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class Main {
     private static Scanner sc = new Scanner(System.in);
-    private static String pathToBookInventory = "data/BooksInventory.txt";
+    private static String pathToBookInventory = "data/BooksInventory.txt"; // file separator místo lomítka
     private static String pathToClientsList = "data/ClientsList.txt";
     
     /**
@@ -25,6 +25,7 @@ public class Main {
             app.loadAllData(pathToBookInventory, pathToClientsList);
             System.out.println("Data úspěšně načtena.");
             areFilesLoaded = true;
+            
         } catch (IOException ex) {
             System.out.println("Neexistujici vstupni soubory.\n" + pathToBookInventory + "\n" + pathToClientsList);
         }

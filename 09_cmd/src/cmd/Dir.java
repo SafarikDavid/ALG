@@ -6,6 +6,7 @@
 package cmd;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -29,8 +30,15 @@ public class Dir extends Command{
             }
         }else if(params.length == 3){
             if(params[1].contains("-e")){
-                files = actualDir.listFiles();
-                return specifiedExtension(files, params[2]);
+                files = actualDir.listFiles(new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String name) {
+                        return name.endsWith(params[2]);
+                    }
+                });
+            return dirToString(files);
+//                files = actualDir.listFiles(); //zkusit přes FileNameFilter stejný princip jako Comparator
+//                return specifiedExtension(files, params[2]);
             }else if(params[1].contains("-s")){
                 files = actualDir.listFiles();
                 return biggerThanSpecifiedSize(files, params[2]);
